@@ -66,6 +66,12 @@ const CodeComplete: Book = {
     }, {
         text: "In general, minimize the extent to which a class collaborates with other classes Try to minimize all of the following: Number of kinds of objects instantiated; Number of different direct routine calls on instantiated objects; Number of routine calls on objects returned by other instantiated objects.",
         page: 150,
+    }, {
+        text: "Initialize all member data in all constructors, if possible Initializing all data members in all constructors is an inexpensive defensive programming practice.",
+        page: 151,
+    }, {
+        text: "Make operators and constructors private when nessesary. E.g. Private constructor for singleton",
+        page: 151,
     }],
 };
 
