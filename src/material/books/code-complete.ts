@@ -34,6 +34,31 @@ const CodeComplete: Book = {
         page: 143,
     }, {
         text: "Red flag if there is a class with more than 7 data members",
+    }, {
+        text: "If the derived class isn’t going to adhere completely to the same interface contract defined by the base class, inheritance is not the right implementation technique. Consider containment or making a change further up the inheritance hierarchy.",
+        page: 144,
+    }, {
+        text: "“Design and document for inheritance, or prohibit it.” If a class isn’t designed to be inherited from, make its members non-virtual in C++, final in Java, or non-overridable in Microsoft Visual Basic so that you can’t inherit from it.",
+        page: 144,
+        reference: "Joshua Bloch",
+    }, {
+        text: "If a programmer must be constantly thinking about semantic differences in subclass implementations, then inheritance is increasing complexity rather than reducing it.",
+        page: 145,
+    }, {
+        text: "You should not worry about semantics in inheritance. You should be able to treat the base class the same in each derived class."
+    }, {
+        text: "Be suspicious of base classes of which there is only one derived class When I see a base class that has only one derived class, I suspect that some programmer has been “designing ahead”—trying to anticipate future needs, usually without fully understanding what those future needs are. The best way to prepare for future work is not to design extra layers of base classes that “might be needed someday”; it’s to make current work as clear, straightforward, and simple as possible. That means not creating any more inheritance structure than is absolutely necessary.",
+        page: 146,
+    }, {
+        text: "Be suspicious of classes that override a routine and do nothing inside the derived routine This typically indicates an error in the design of the base class. For instance, suppose you have a class Cat and a routine Scratch() and suppose that you eventually find out that some cats are declawed and can’t scratch. You might be tempted to create a class derived from Cat named ScratchlessCat and override the Scratch() routine to do nothing.",
+        page: 146,
+    }, {
+        text: "Avoid deep inheritance trees Object-oriented programming provides a large number of techniques for managing complexity. But every powerful tool has its hazards, and some object-oriented techniques have a tendency to increase complexity rather than reduce it. Arthur Riel suggests limiting inheritance hierarchies to a maximum of six levels.",
+        page: 147,
+        reference: "Object-Oriented Design Heuristics (1996), Arthur Riel",
+    }, {
+        text: "Prefer polymorphism to extensive type checking Frequently repeated case statements sometimes suggest that inheritance might be a better design choice, although this is not always true.",
+        page: 147,
     }],
 };
 
