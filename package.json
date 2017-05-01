@@ -1,0 +1,26 @@
+{
+  "name": "tips",
+  "version": "1.0.0",
+  "description": "Programming tips found from my journey of learning",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "npm run lint",
+    "build": "rimraf dist && tsc --p .",
+    "lint": "tslint --project ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dolan-bio/Tips.git"
+  },
+  "author": "Dolan Miu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dolan-bio/Tips/issues"
+  },
+  "homepage": "https://github.com/dolan-bio/Tips#readme",
+  "devDependencies": {
+    "rimraf": "^2.6.1",
+    "tslint": "^5.1.0",
+    "typescript": "^2.3.2"
+  }
+}
