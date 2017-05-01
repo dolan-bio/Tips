@@ -59,6 +59,13 @@ const CodeComplete: Book = {
     }, {
         text: "Prefer polymorphism to extensive type checking Frequently repeated case statements sometimes suggest that inheritance might be a better design choice, although this is not always true.",
         page: 147,
+    }, {
+        text: "Keep the number of routines in a class as small as possible. A study of C++ programs found that higher numbers of routines per class were associated with higher fault rates. However, other competing factors were found to be more significant, including deep inheritance trees, large number of routines called within a class, and strong coupling between classes. Evaluate the tradeoff between minimizing the number of routines and these other factors.",
+        page: 150,
+        reference: "Basili, Briand, and Melo 1996",
+    }, {
+        text: "In general, minimize the extent to which a class collaborates with other classes Try to minimize all of the following: Number of kinds of objects instantiated; Number of different direct routine calls on instantiated objects; Number of routine calls on objects returned by other instantiated objects.",
+        page: 150,
     }],
 };
 
