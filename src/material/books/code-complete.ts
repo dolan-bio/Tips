@@ -45,7 +45,7 @@ const CodeComplete: Book = {
         text: "If a programmer must be constantly thinking about semantic differences in subclass implementations, then inheritance is increasing complexity rather than reducing it.",
         page: 145,
     }, {
-        text: "You should not worry about semantics in inheritance. You should be able to treat the base class the same in each derived class."
+        text: "You should not worry about semantics in inheritance. You should be able to treat the base class the same in each derived class.",
     }, {
         text: "Be suspicious of base classes of which there is only one derived class When I see a base class that has only one derived class, I suspect that some programmer has been “designing ahead”—trying to anticipate future needs, usually without fully understanding what those future needs are. The best way to prepare for future work is not to design extra layers of base classes that “might be needed someday”; it’s to make current work as clear, straightforward, and simple as possible. That means not creating any more inheritance structure than is absolutely necessary.",
         page: 146,
@@ -72,6 +72,93 @@ const CodeComplete: Book = {
     }, {
         text: "Make operators and constructors private when nessesary. E.g. Private constructor for singleton",
         page: 151,
+    }, {
+        text: "Minimize the number of different routines called by a class. A low 'Fan out'. One study found that the number of faults in a class was statistically correlated with the total number of routines that were called from within a class. The same study found that the more classes a class used, the higher its fault rate tended to be. ",
+        page: 150,
+        reference: "Basili, Briand, and Melo 1996",
+    }, {
+        text: "Minimize indirect routine calls to other classes. Direct connections are hazardous enough. Indirect connections—such as account.ContactPerson().DaytimeContactInfo().PhoneNumber() — tend to be even more hazardous. Researchers have formulated a rule called the “Law of Demeter”, which essentially states that Object A can call any of its own routines. If Object A instantiates an Object B, it can call any of Object B’s routines. But it should avoid calling routines on objects provided by Object B. In the account example above, that means account.ContactPerson() is OK but account.ContactPerson().DaytimeContactInfo() is not.",
+        page: 150,
+        reference: "Lieberherr and Holland 1989",
+    }, {
+        text: "In general, minimize the extent to which a class collaborates with other classes Try to minimise the number of kinds of objects instantiated, the number of different direct routine calls on instantiated objects and the number of routine calls on objects returned by other instantiated objects",
+        page: 150,
+    }, {
+        text: "Initialize all member data in all constructors, if possible Initializing all data members in all constructors is an inexpensive defensive programming practice.",
+        page: 151,
+    }, {
+        text: "Enforce the singleton property by using a private constructor. Say you have a class called Customer, if you only want one Customer to be created, create a static Customer.GetInstance() method, and a private constructor to enforce it.",
+        page: 151,
+    }, {
+        text: "Prefer deep copies to shallow copies until proven otherwise One of the major decisions you’ll make about complex objects is whether to implement deep copies or shallow copies of the object. A deep copy of an object is a member-wise copy of the object’s member data; a shallow copy typically just points to or refers to a single reference copy, although the specific meanings of “deep” and “shallow” vary. The motivation for creating shallow copies is typically to improve performance. Although creating multiple copies of large objects might be aesthetically offensive, it rarely causes any measurable performance impact. A small number of objects might cause performance issues, but programmers are notoriously poor at guessing which code really causes problems. ",
+        page: 151,
+        reference: "Chapter 25, Code-Tuning Strategies",
+    }, {
+        text: "Deep copies are simpler to code and maintain than shallow copies. In addition to the code either kind of object would contain, shallow copies add code to count references, ensure safe object copies, safe comparisons, safe deletes, and so on. This code can be error-prone, and you should avoid it unless there’s a compelling reason to create it.",
+        page: 152,
+        reference: "Scott Meyers’s More Effective C++, Item 29 (1996)",
+    }, {
+        text: "Avoid creating god classes",
+        page: 155,
+        reference: "Riel 1996",
+    }, {
+        text: "Reasons to create a Class include: Modelling real-world objects, modelling abstract objects, reducing complexity, isolating complexity, hiding implementation details, limit effects of changes, hiding global data, streamlining parameter passing, making central points of control, facilitate reusable code, plan for a family of programs, packaging related operations, and accomplishing a specific refactoring.",
+        page: 153,
+    }, {
+        text: "Eliminate irrelevant classes. If a class consists only of data but no behavior, ask yourself whether it’s really a class and consider demoting it so that its member data just becomes attributes of one or more other classes.",
+        page: 155,
+    }, {
+        text: "Avoid classes named after verbs A class that has only behavior but no data is generally not really a class",
+        page: 155,
+    }, {
+        text: "In routines, defend against bad data. Do checking for bad data and throw an error instead of having the routine malfunction.",
+        page: 163,
+    }, {
+        text: "Reasons to create a class include: reducing complexity, introduce an intermediate - understandable abstraction, avoiding duplicate code, support subclassing, hiding sequences, hide pointer operations, improve portability, simplify complicated boolean testsimprove performance and to ensure all routines are small.",
+        page: 165,
+    }, {
+        text: "Make names of routines as long as necessary Research shows that the optimum average length for a variable name is 9 to 15 characters.",
+        page: 172,
+    }, {
+        text: "Put parameters in input-modify-output order Instead of ordering parameters randomly or alphabetically, list the parameters that are input-only first, input-and-output second, and output-only third. This ordering implies the sequence of operations happening within the routine-inputting data, changing it, and sending back a result.",
+        page: 174,
+    }, {
+        text: "Don’t use routine parameters as working variables. It’s dangerous to use the parameters passed to a routine as working variables. Use local variables instead. Imagine if you return a mutated input variable, it will look confusing",
+        page: 176,
+    }, {
+        text: "7+ parameters in a routine is too much. Psychological research has found that people generally cannot keep track of more than about seven chunks of information at once",
+        page: 178,
+        reference: "Miller 1956",
+    }, {
+        text: "Unused parameters are correlated with an increased error rate. In one study, 46 percent of routines with no unused variables had no errors, and only 17 to 29 percent of routines with more than one unreferenced variable had no errors.",
+        page: 176,
+        reference: "Card, Church, and Agresti 1986",
+    }, {
+        text: "Don't be afraid to create small routines (1-3 lines). Do it for readability.",
+    }, {
+        text: "Pass the variables or objects that the routine needs to maintain its interface abstraction. The top most priority is to maintain interface abstraction. If the variables the interface needs is coincidently all the variables in a class, do not change the interface to take in the class, make it true to that interface, keep it 3 variables. Imagine if the class changes in future, it will break abstraction.",
+        page: 179,
+    }, {
+        text: "If you find yourself frequently changing the parameter list to the routine, with the parameters coming from the same object each time, that’s an indication that you should be passing the whole object rather than specific elements.",
+        page: 179,
+    }, {
+        text: "Use a function if the primary purpose of the routine is to return the value indicated by the function name. Otherwise, use a procedure.",
+        page: 182,
+    }, {
+        text: "Check the values of all routine input parameters Checking the values of routine input parameters is essentially the same as checking data that comes from an external source, except that the data comes from another routine instead of from an external interface. (I sort of disagree with this. In my opinion, no need to do such robust checking if you 100% know the return value will be correct inside your app).",
+        page: 188,
+        reference: "Section 8.5, “Barricade Your Program to Contain the Damage Caused by Errors",
+    }, {
+        text: "Initialise the return variable at the start of a function to prevent it mistakenly returning an uninitialised variable.",
+    }, {
+        text: "Don’t use an exception to pass the buck. If an error condition can be handled locally, handle it locally. Don’t throw an uncaught exception in a section of code if you can handle the error locally.",
+        page: 199,
+    }, {
+        text: "Throw an exception only for conditions that are truly exceptional. Exceptions should be reserved for conditions that are truly exceptional—in other words, for conditions that cannot be addressed by other coding practices. Exceptions are used in similar circumstances to assertions—for events that are not just infrequent but for events that should never occur.",
+        page: 199,
+    }, {
+        text: "Don't throw low level exceptions outwards because that breaks encapsulation. Throw a new one is generally better.",
+        page: 200,
     }],
 };
 
