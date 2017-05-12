@@ -159,6 +159,14 @@ const CodeComplete: Book = {
     }, {
         text: "Don't throw low level exceptions outwards because that breaks encapsulation. Throw a new one is generally better.",
         page: 200,
+    }, {
+        text: "Include in the exception message all information that led to the exception. Every exception occurs in specific circumstances that are detected at the time the code throws the exception. This information is invaluable to the person who reads the exception message. Be sure the message contains the information needed to understand why the exception was thrown. If the exception was thrown because of an array.",
+        page: 200,
+    }, {
+        text: "Avoid empty catch blocks. Such an approach says that either the code within the try block is wrong because it raises an exception for no reason, or the code within the catch block is wrong because it doesn’t handle a valid exception. Determine which is the root cause of the problem, and then fix either the try block or the catch block.",
+        page: 201,
+    }, {
+        text: ""
     }],
 };
 
