@@ -166,7 +166,17 @@ const CodeComplete: Book = {
         text: "Avoid empty catch blocks. Such an approach says that either the code within the try block is wrong because it raises an exception for no reason, or the code within the catch block is wrong because it doesn’t handle a valid exception. Determine which is the root cause of the problem, and then fix either the try block or the catch block.",
         page: 201,
     }, {
-        text: ""
+        text: "Barricades are a damage-containment strategy. The reason is similar to that for having isolated compartments in the hull of a ship. If the ship runs into an iceberg and popsopen the hull, that compartment is shut off and the rest of the ship isn’t affected. They are also similar to firewalls in a building. A building’s firewalls prevent fire from spreadingfrom one part of a building to another part.",
+        page: 203,
+    }, {
+        text: "Convert input data to the proper type at input time Input typically arrives in the form of a string or number. Sometimes the value will map onto a boolean type like “yes” or “no.” Sometimes the value will map onto an enumerated type like Color_Red, Color_Green, and Color_Blue. Carrying data of questionable type for any length of time in a program increases complexity and increases the chance that someone can crash your program by inputting a color like “Yes.” Convert input data to the proper form as soon as possible after it’s input.",
+        page: 204,
+    }, {
+        text: "Be willing to trade speed and resource usage during development in exchange for built-in tools that can make development go more smoothly.",
+        page: 205,
+    }, {
+        text: "The code between references to a variable is a “window of vulnerability.” In the window, new code might be added, inadvertently altering the variable, or someone reading the code might forget the value the variable is supposed to contain. It’s always a good idea to localize references to variables by keeping them close together.",
+        page: 245,
     }],
 };
 
