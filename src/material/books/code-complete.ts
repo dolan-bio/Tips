@@ -177,6 +177,88 @@ const CodeComplete: Book = {
     }, {
         text: "The code between references to a variable is a “window of vulnerability.” In the window, new code might be added, inadvertently altering the variable, or someone reading the code might forget the value the variable is supposed to contain. It’s always a good idea to localize references to variables by keeping them close together.",
         page: 245,
+    }, {
+        text: "Keep Variables “Live” for as Short a Time as Possible. And as with span, the basic advantage of maintaining a low number is that it reduces the window of vulnerability. You reduce the chance of incorrectly or inadvertently altering a variable between the places in which you intend to alter it.",
+        page: 246,
+    }, {
+        text: "Keep Variables “Live” for as Short a Time as Possible. A second advantage of keeping the live time short is that it gives you an accurate picture of your code. If a variable is assigned a value in line 10 and not used again until line 45, the very space between the two references implies that the variable is used between lines 10 and 45. If the variable is assigned a value in line 44 and used in line 45, no other uses of the variable are implied, and you can concentrate on a smaller section of code when you’re thinking about that variable.",
+        page: 247,
+    }, {
+        text: "A short live time makes your code more readable.",
+        page: 247,
+    }, {
+        text: "Short live times are useful when splitting a large routine into smaller routines. If references to variables are kept close together, it’s easier to refactor related sections of code into routines of their own.",
+        page: 247,
+    }, {
+        text: "Other programmers prefer to keep their variables as local as possible because local scope helps intellectual manageability. The more information you can hide, the less you have to keep in mind at any one time. The less you have to keep in mind, the smaller the chance that you’ll make an error because you forgot one of the many details you needed to remember.",
+        page: 251,
+    }, {
+        text: "Use each variable for one purpose only It’s sometimes tempting to use one variable in two different places for two different activities. Usually, the variable is named inappropriately for one of its uses or a “temporary” variable is used in both cases (with the usual unhelpful name x or temp).",
+        page: 255,
+    }, {
+        text: "Avoid variables with hidden meanings. This is called hybrid coupling. The variable is stretched over two jobs, meaning that the variable is the wrong type for one of the jobs. In the pageCount example, pageCount normally indicates the number of pages; it’s an integer. When pageCount is -1, however, it indicates that an error has occurred; the integer is moonlighting as a boolean! For example, the value in the variable pageCount might represent the number of pages printed, unless it equals -1, in which case it indicates that an error has occurred. Or, the variable bytesWritten might be the number of bytes written to an output file, unless its value is negative, in which case it indicates the number of the disk drive used for the output.",
+        page: 256,
+        reference: "Page-Jones 1988",
+    }, {
+        text: "The effort required to debug a program was minimized when variables had names that averaged 10 to 16 characters. Programs with names averaging 8 to 20 characters were almost as easy to debug. The guideline doesn’t mean that you should try to make all of your variable names 9 to 15 or 10 to 16 characters long. It does mean that if you look over your code and see many names that are shorter, you should check to be sure that the names are as clear as they need to be.",
+        page: 262,
+        reference: "Gorla, Benander, and Benander (1990)",
+    }, {
+        text: "Are short variable names always bad? No, not always. When you give a variable a short name like i, the length itself says something about the variable—namely, that the variable is a scratch value with a limited scope of operation.",
+        page: 262,
+    }, {
+        text: "If a variable is to be used outside the loop, it should be given a name more meaningful than i, j, or k. For example, if you are reading records from a file and need to remember how many records you’ve read, a name like recordCount would be appropriate.",
+        page: 265,
+    }, {
+        text: "If the loop is longer than a few lines, it’s easy to forget what i is supposed to stand for and you’re better off giving the loop index a more meaningful name. Because code is so often changed, expanded, and copied into other programs, many experienced programmers avoid names like i altogether.",
+        page: 265,
+    }, {
+        text: "In nested for loops, use a more descriptive name than i and j.",
+        page: 265,
+    }, {
+        text: "Think of a better name than flag for status variables. It’s better to think of flags as status variables. A flag should never have flag in its name because that doesn’t give you any clue about what the flag does. For clarity, flags should be assigned values and their values should be tested with enumerated types, named constants, or global variables that act as named constants.",
+        page: 266,
+    }, {
+        text: "Be leery of “temporary” variables. It’s often necessary to preserve values temporarily. But in one way or another, most of the variables in your program are temporary. Calling a few of them temporary may indicate that you aren’t sure of their real purposes.",
+        page: 267,
+    }, {
+        text: "Use positive boolean variable names Negative names like notFound, notdone, and notSuccessful are difficult to read when they are negated.",
+        page: 269,
+    }, {
+        text: "When naming constants, name the abstract entity the constant represents rather than the number the constant refers to. FIVE is a bad name for a constant (regardless of whether the value it represents is 5.0). CYCLES_NEEDED is a good name. CYCLES_NEEDED can equal 5.0 or 6.0. FIVE = 6.0 would be ridiculous.",
+        page: 270,
+    }, {
+        text: "Any convention at all is often better than no convention. The convention may be arbitrary. The power of naming conventions doesn’t come from the specific convention chosen but from the fact that a convention exists, adding structure to the code and giving you fewer things to worry about.",
+        page: 271,
+    }, {
+        text: "Don’t abbreviate by removing one character from a word. Typing one character is little extra work, and the one-character savings hardly justifies the loss in readability. It’s like the calendars that have “Jun” and “Jul.” You have to be in a big hurry to spell June as “Jun.” With most one-letter deletions, it’s hard to remember whether you removed the character. Either remove more than one character or spell out the word.",
+        page: 283,
+    }, {
+        text: "Abbreviate consistently Always use the same abbreviation. For example, use Num everywhere or No everywhere, but don’t use both. Similarly, don’t abbreviate a word in some names and not in others. For instance, don’t use the full word Number in some places and the abbreviation Num in others.",
+        page: 283,
+    }, {
+        text: "Create names that you can pronounce. Use xPos rather than xPstn and needsComp rather than ndsCmptg. Apply the telephone test—if you can’t read your code to someone over the phone, rename your variables to be more distinctive.",
+        page: 283,
+        reference: "Kernighan and Plauger 1978",
+    }, {
+        text: "Avoid numerals in names. If the numerals in a name are really significant, use an array instead of separate variables. If an array is inappropriate, numerals are even more inappropriate. For example, avoid file1 and file2, or total1 and total2. You can almost always think of a better way to differentiate between two variables than by tacking a 1 or a 2 onto the end of the name.",
+        page: 286,
+    }, {
+        text: "Avoid multiple natural languages In multinational projects, enforce use of a single natural language for all code, including class names, variable names, and so on. Reading another programmer’s code can be a challenge; reading another programmer’s code in Southeast Martian is impossible.",
+        page: 287,
+    }, {
+        text: "Avoid “magic numbers”. Magic numbers are literal numbers, such as 100 or 47524, that appear in the middle of a program without explanation. If you program in a language that supports named constants, use them instead. If you can’t use named constants, use global variables when it’s feasible to do so.",
+        page: 292,
+    }, {
+        text: "Avoid magic characters and strings. Magic characters are literal characters (such as 'A') and magic strings are literal strings (such as 'Gigamatic Accounting Program') that appear throughout a program. If you program in a language that supports the use of named constants, use them instead. Otherwise, use global variables.",
+        page: 298,
+    }, {
+        text: "Anytime you see a numeric literal, ask whether it makes sense to replace it with an enumerated type.",
+        page: 303,
+    }, {
+        text: "Don't pretend that you're not using global variables by creating a monster object and passing that everywhere",
+    }, {
+        
     }],
 };
 
