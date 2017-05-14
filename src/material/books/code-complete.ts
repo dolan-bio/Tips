@@ -286,6 +286,12 @@ const CodeComplete: Book = {
     }, {
         text: "Keep the actions of each case simple. Keep the code associated with each case short. Short code following each case helps make the structure of the case statement clear. If the actions performed for a case are complicated, write a routine and call the routine from the case rather than putting the code into the case itself.",
         page: 361,
+    }, {
+        text: "The foreach loop or its equivalent (foreach in C#, For-Each in Visual Basic, for-in in Python) is useful for performing an operation on each member of an array or other container. It has the advantage of eliminating loop-housekeeping arithmetic and therefore eliminating any chance of errors in the loop-housekeeping arithmetic.",
+        page: 372,
+    }, {
+        text: "You can forestall these problems by observing two practices. First, minimize the number of factors that affect the loop. Simplify! Simplify! Simplify! Second, treat the inside of the loop as if it were a routine—keep as much of the control as possible outside the loop. Explicitly state the conditions under which the body of the loop is to be executed. Don’t make the reader look inside the loop to understand the loop control. Think of a loop as a black box: the surrounding program knows the control conditions but not the contents.",
+        page: 373,
     }],
 };
 
