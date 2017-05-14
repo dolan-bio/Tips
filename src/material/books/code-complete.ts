@@ -258,7 +258,34 @@ const CodeComplete: Book = {
     }, {
         text: "Don't pretend that you're not using global variables by creating a monster object and passing that everywhere",
     }, {
-        
+        text: "Put related statements together. They can be related because they operate on the same data, perform similar tasks, or depend on each other’s being performed in order.",
+        page: 352,
+    }, {
+        text: "Use routine parameters to make dependencies obvious. If no data is passed between routines, you don’t know whether any of the routines use the same data. By rewriting the code so that data is passed between the routines, you set up a clue that the execution order is important.",
+        page: 349,
+    }, {
+        text: "Name routines so that dependencies are obvious. In the Visual Basic example, ComputeMarketingExpense() is misnamed because it does more than compute marketing expenses; it also initializes member data. If you’re opposed to creating an additional routine to initialize the data, at least give ComputeMarketingExpense() a name that describes all the functions it performs. In this case, ComputeMarketingExpenseAndInitializeMemberData() would be an adequate name. You might say it’s a terrible name because it’s so long, but the name describes what the routine does and is not terrible. The routine itself is terrible!",
+        page: 348,
+    }, {
+        text: "Don't make semantic assumptions when writing methods.",
+    }, {
+        text: "Document unclear dependencies with comments. Try first to write code without order dependencies.Try second to write code that makes dependencies obvious. If you’re still concerned that an order dependency isn’t explicit enough, document it. Documenting unclear dependencies is one aspect of documenting coding assumptions, which is critical to writing maintainable, modifiable code.",
+        page: 350,
+    }, {
+        text: "Write the nominal path through the code first; then write the unusual cases. Write your code so that the normal path through the code is clear. Make sure that the rare cases don’t obscure the normal path of execution. This is important for both readability and performance.",
+        page: 355,
+    }, {
+        text: "Put the normal case after the if rather than after the else. Put the case you normally expect to process first. This is in line with the general principle of putting code that results from a decision as close as possible to the decision. Here’s a code example that does a lot of error processing, haphazardly checking for errors along the way.",
+        page: 356,
+    }, {
+        text: "For Case statements, order cases alphabetically or numerically. If cases are equally important, putting them in A-B-C order improves readability. That way a specific case is easy to pick out of the group.",
+        page: 361,
+    }, {
+        text: "For Case statements, put the normal case first If you have one normal case and several exceptions, put the normal case first. Indicate with comments that it’s the normal case and that the others are unusual.",
+        page: 361,
+    }, {
+        text: "Keep the actions of each case simple. Keep the code associated with each case short. Short code following each case helps make the structure of the case statement clear. If the actions performed for a case are complicated, write a routine and call the routine from the case rather than putting the code into the case itself.",
+        page: 361,
     }],
 };
 
