@@ -380,7 +380,25 @@ const CodeComplete: Book = {
         page: 453,
         reference: "Meyer 1997",
     }, {
-
+        text: "Complicated code is a sign that you don’t understand your program well enough to make it simple. Deep nesting is a warning sign that indicates a need to break out a routine or redesign the part of the code that’s complicated. It doesn’t mean you have to modify the routine, but you should have a good reason for not doing so if you don’t.",
+        page: 453,
+    }, {
+        text: "Intuitively, the complexity of a program would seem to largely determine the amount of effort required to understand it. Tom McCabe published an influential paper arguing that a program’s complexity is defined by its control flow (1976). Other researchers have identified factors other than McCabe’s cyclomatic complexity metric (such as the number of variables used in a routine), but they agree that control flow is at least one of the largest contributors to complexity, if not the largest.",
+        page: 457,
+        reference: "Tom McCabe (1976)",
+    }, {
+        text: "Computer-science researchers have been aware of the importance of complexity for at least two decades. Many years ago, Edsger Dijkstra cautioned against the hazards of complexity: “The competent programmer is fully aware of the strictly limited size of his own skull; therefore, he approaches the programming task in full humility”. This does not imply that you should increase the capacity of your skull to deal with enormous complexity. It implies that you can never deal with enormous complexity and must take steps to reduce it wherever possible.",
+        page: 457,
+        reference: "Dijkstra 1972",
+    }, {
+        text: "One measure of “programming complexity” is the number of mental objects you have to keep in mind simultaneously in order to understand a program. This mental juggling act is one of the most difficult aspects of programming and is the reason programming requires more concentration than other activities. It’s the reason programmers get upset about “quick interruptions”—such interruptions are tantamount to asking a juggler to keep three balls in the air and hold your groceries at the same time.",
+        page: 457,
+    }, {
+        text: "Making boolean expressions simple and readable contributes substantially to the quality of your code.",
+        page: 460,
+    }, {
+        text: "Minimizing complexity is a key to writing high-quality code.",
+        page: 460,
     }],
 };
 
