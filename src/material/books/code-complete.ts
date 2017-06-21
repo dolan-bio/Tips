@@ -292,6 +292,43 @@ const CodeComplete: Book = {
     }, {
         text: "You can forestall these problems by observing two practices. First, minimize the number of factors that affect the loop. Simplify! Simplify! Simplify! Second, treat the inside of the loop as if it were a routine—keep as much of the control as possible outside the loop. Explicitly state the conditions under which the body of the loop is to be executed. Don’t make the reader look inside the loop to understand the loop control. Think of a loop as a black box: the surrounding program knows the control conditions but not the contents.",
         page: 373,
+    }, {
+        text: "Keep the actions of each case simple. Keep the code associated with each case short. Short code following each case helps make the structure of the case statement clear. If the actions performed for a case are complicated, write a routine and call the routine from the case rather than putting the code into the case itself.",
+        page: 361,
+    }, {
+        text: "Use the default clause only to detect legitimate defaults. You might sometimes have only one case remaining and decide to code that case as the default clause. Though sometimes tempting, that’s dumb. You lose the automatic documentation provided by case-statement labels, and you lose the ability to detect errors with the default clause.",
+        page: 363,
+    }, {
+        text: "Don't make the reader look inside the loop to understand the loop control. Think of a loop as a black box: the surrounding program knows the control conditions but not the contents.",
+        page: 373,
+    }, {
+        text: "Keep loop-initialization statements with the loop they’re related to. If you don’t, you’re more likely to cause errors when you generalize the loop into a bigger loop and forget to modify the initialization code. The same kind of error can occur when you move or copy the loop code into a different routine without moving or copying its initialization code. Putting initializations away from the loop—in the data-declaration section or in a housekeeping section at the top of the routine that contains the loop—invites initialization troubles.",
+        page: 373,
+    }, {
+        text: "Keep loop-housekeeping chores at either the beginning or the end of the loop. Loop housekeeping chores are expressions like i = i + 1 or j++, expressions whose main purpose isn’t to do the work of the loop but to control the loop.",
+        page: 376,
+    }, {
+        text: "Make each loop perform only one function. The mere fact that a loop can be used to do two things at once isn’t sufficient justification for doing them together. Loops should be like routines in that each one should do only one thing and do it well. If it seems inefficient to use two loops where one would suffice, write the code as two loops, comment that they could be combined for efficiency, and then wait until benchmarks show that the section of the program poses a performance problem before changing the two loops into one.",
+        page: 376,
+    }, {
+        text: "Avoid code that depends on the loop index’s final value. It’s bad form to use the value of the loop index after the loop. The terminal value of the loop index varies from language to language and implementation to implementation. The value is different when the loop terminates normally and when it terminates abnormally. Even if you happen to know what the final value is without stopping to think about it, the next person to read the code will probably have to think about it. It’s better form and more self-documenting if you assign the final value to a variable at the appropriate point inside the loop.",
+        page: 377,
+    }, {
+        text: "Be wary of a loop with a lot of breaks scattered through it. A loop’s containing a lot of breaks can indicate unclear thinking about the structure of the loop or its role in the surrounding code. A proliferation of breaks raises the possibility that the loop could be more clearly expressed as a series of loops rather than as one loop with many exits.",
+        page: 380,
+    }, {
+        text: "Use break and continue only with caution Use of break eliminates the possibility of treating a loop as a black box. Limiting yourself to only one statement to control a loop’s exit condition is a powerful way to simplify your loops. Using a break forces the person reading your code to look inside the loop for an understanding of the loop control. That makes the loop more difficult to understand.",
+        page: 381,
+    }, {
+        text: "Use meaningful variable names to make nested loops readable. Arrays are often indexed with the same variables that are used for loop indexes. If you have a onedimensional array, you might be able to get away with using i, j, or k to index it. But if you have an array with two or more dimensions, you should use meaningful index names to clarify what you’re doing. Meaningful array-index names clarify both the purpose of the loop and the part of the array you intend to access.",
+        page: 382,
+    }, {
+        text: "Make your loops short enough to view all at once. If you usually look at loops on your monitor and your monitor displays 50 lines, that puts a 50-line restriction on you. Experts have suggested a loop-length limit of one page. When you begin to appreciate the principle of writing simple code, however, you’ll rarely write loops longer than 15 or 20 lines",
+        page: 385,
+    }, {
+        text: "Limit nesting to three levels. Studies have shown that the ability of programmers to comprehend a loop deteriorates significantly beyond three levels of nesting. If you’re going beyond that number of levels, make the loop shorter (conceptually) by breaking part of it into a routine or simplifying the control structure.",
+        page: 385,
+        reference: "Yourdon 1986a",
     }],
 };
 
