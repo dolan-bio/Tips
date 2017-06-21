@@ -329,6 +329,58 @@ const CodeComplete: Book = {
         text: "Limit nesting to three levels. Studies have shown that the ability of programmers to comprehend a loop deteriorates significantly beyond three levels of nesting. If you’re going beyond that number of levels, make the loop shorter (conceptually) by breaking part of it into a routine or simplifying the control structure.",
         page: 385,
         reference: "Yourdon 1986a",
+    }, {
+        text: "Make long loops especially clear. Length adds complexity. If you write a short loop, you can use riskier control structures such as break and continue, multiple exits, complicated termination conditions, and so on. If you write a longer loop and feel any concern for your reader, you’ll give the loop a single exit and make the exit condition unmistakably clear.",
+        page: 385,
+    }, {
+        text: "Use a return when it enhances readability. In certain routines, once you know the answer, you want to return it to the calling routine immediately. If the routine is defined in such a way that it doesn’t require any further cleanup once it detects an error, not returning immediately means that you have to write more code.",
+        page: 391,
+    }, {
+        text: "Use guard clauses (early returns or exits) to simplify complex error processing. Code that has to check for numerous error conditions before performing its nominal actions can result in deeply indented code and can obscure the nominal case",
+        page: 392,
+    }, {
+        text: "Minimize the number of returns in each routine. It’s harder to understand a routine when, reading it at the bottom, you’re unaware of the possibility that it returned somewhere above. For that reason, use returns judiciously—only when they improve readability.",
+        page: 393,
+    }, {
+        text: "Use safety counters to prevent infinite recursion. If you’re using recursion in a situation that doesn’t allow a simple test such as the one just described, use a safety counter to prevent infinite recursion. The safety counter has to be a variable that’s not re-created each time you call the routine. Use a class member variable or pass the safety counter as a parameter.",
+        page: 396,
+    }, {
+        text: "Limit recursion to one routine. Cyclic recursion (A calls B calls C calls A) is dangerous because it’s hard to detect. Mentally managing recursion in one routine is tough enough; understanding recursion that spans routines is too much. If you have cyclic recursion, you can usually redesign the routines so that the recursion is restricted to a single routine. If you can’t and you still think that recursion is the best approach, use safety counters as a recursive insurance policy.",
+        page: 396,
+    }, {
+        text: "Don’t use recursion for factorials or Fibonacci numbers. One problem with computer-science textbooks is that they present silly examples of recursion. The typical examples are computing a factorial or computing a Fibonacci sequence. Recursion is a powerful tool, and it’s really dumb to use it in either of those cases. If a programmer who worked for me used recursion to compute a factorial, I’d hire someone else.",
+        page: 397,
+    }, {
+        text: "Move complicated expressions into boolean functions. If a test is repeated often or distracts from the main flow of the program, move the code for the test into a function and test the value of the function",
+        page: 434,
+    }, {
+        text: "Use decision tables to replace complicated conditions. Sometimes you have a complicated test involving several variables. It can be helpful to use a decision table to perform the test rather than using ifs or cases. A decision-table lookup is easier to code initially, having only a couple of lines of code and no tricky control structures. This minimization of complexity minimizes the opportunity for mistakes. If your data changes, you can change a decision table without changing the code; you only need to update the contents of the data structure.",
+        page: 435,
+    }, {
+        text: "Not a few people don’t have not any trouble understanding a nonshort string of nonpositives—that is, most people have trouble understanding a lot of negatives. You can do several things to avoid complicated negative boolean expressions in your programs. In if statements, convert negatives to positives and flip-flop the code in the if and else clauses",
+        page: 435,
+    }, {
+        text: "Apply DeMorgan’s Theorems to simplify boolean tests with negatives. DeMorgan’s Theorems let you exploit the logical relationship between an expression and a version of the expression that means the same thing because it’s doubly negated.",
+        page: 436,
+    }, {
+        text: "Different languages use different kinds of evaluation, and language implementers tend to take liberties with expression evaluation, so check the manual for the specific version of the language you’re using to find out what kind of evaluation your language uses. Better yet, since a reader of your code might not be as sharp as you are, use nested tests to clarify your intentions instead of depending on evaluation order and short-circuit evaluation.",
+        page: 440,
+    }, {
+        text: "Organize numeric tests so that they follow the points on a number line. In general, structure your numeric tests so that you have comparisons like these: MIN_ELEMENTS <= i and i <= MAX_ELEMENTS and i < MIN_ELEMENTS or MAX_ELEMENTS < i. The idea is to order the elements left to right, from smallest to largest. In the first line, MIN_ELEMENTS and MAX_ELEMENTS are the two endpoints, so they go at the ends. The variable i is supposed to be between them, so it goes in the middle. In the second example, you’re testing whether i is outside the range, so i goes on the outside of the test at either end and MIN_ELEMENTS and MAX_ELEMENTS go on the inside.",
+        page: 440,
+    }, {
+        text: "Excessive indentation, or “nesting,” has been pilloried in computing literature for 25 years and is still one of the chief culprits in confusing code. Studies by Noam Chomsky and Gerald Weinberg suggest that few people can understand more than three levels of nested ifs, and many researchers recommend avoiding nesting to more than three or four levels.",
+        page: 445,
+        reference: "Yourdon 1986a, Myers 1976, Marca 1981, and Ledgard and Tauer 1987a",
+    }, {
+        text: "Compare numbers to 0 Although it’s appropriate to compare logical expressions implicitly, you should compare numeric expressions explicitly. For numbers, writen 'while ( balance != 0 )' rather than 'while ( balance )'",
+        page: 441,
+    }, {
+        text: "Redesign deeply nested code Some experts argue that case statements virtually always indicate poorly factored code in object-oriented programming and are rarely, if ever, needed. This transformation from case statements that invoke routines to an object factory with polymorphic method calls is one such example.",
+        page: 453,
+        reference: "Meyer 1997",
+    }, {
+
     }],
 };
 
