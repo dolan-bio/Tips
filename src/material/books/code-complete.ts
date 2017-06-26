@@ -166,7 +166,7 @@ const CodeComplete: Book = {
         text: "Avoid empty catch blocks. Such an approach says that either the code within the try block is wrong because it raises an exception for no reason, or the code within the catch block is wrong because it doesn’t handle a valid exception. Determine which is the root cause of the problem, and then fix either the try block or the catch block.",
         page: 201,
     }, {
-        text: "Barricades are a damage-containment strategy. The reason is similar to that for having isolated compartments in the hull of a ship. If the ship runs into an iceberg and popsopen the hull, that compartment is shut off and the rest of the ship isn’t affected. They are also similar to firewalls in a building. A building’s firewalls prevent fire from spreadingfrom one part of a building to another part.",
+        text: "Barricades are a damage-containment strategy. The reason is similar to that for having isolated compartments in the hull of a ship. If the ship runs into an iceberg and pops open the hull, that compartment is shut off and the rest of the ship isn’t affected. They are also similar to firewalls in a building. A building’s firewalls prevent fire from spreading from one part of a building to another part.",
         page: 203,
     }, {
         text: "Convert input data to the proper type at input time Input typically arrives in the form of a string or number. Sometimes the value will map onto a boolean type like “yes” or “no.” Sometimes the value will map onto an enumerated type like Color_Red, Color_Green, and Color_Blue. Carrying data of questionable type for any length of time in a program increases complexity and increases the chance that someone can crash your program by inputting a color like “Yes.” Convert input data to the proper form as soon as possible after it’s input.",
@@ -357,7 +357,7 @@ const CodeComplete: Book = {
         text: "Use decision tables to replace complicated conditions. Sometimes you have a complicated test involving several variables. It can be helpful to use a decision table to perform the test rather than using ifs or cases. A decision-table lookup is easier to code initially, having only a couple of lines of code and no tricky control structures. This minimization of complexity minimizes the opportunity for mistakes. If your data changes, you can change a decision table without changing the code; you only need to update the contents of the data structure.",
         page: 435,
     }, {
-        text: "Not a few people don’t have not any trouble understanding a nonshort string of nonpositives—that is, most people have trouble understanding a lot of negatives. You can do several things to avoid complicated negative boolean expressions in your programs. In if statements, convert negatives to positives and flip-flop the code in the if and else clauses",
+        text: "Not a few people don’t have not any trouble understanding a nonshort string of nonpositives — that is, most people have trouble understanding a lot of negatives. You can do several things to avoid complicated negative boolean expressions in your programs. In if statements, convert negatives to positives and flip-flop the code in the if and else clauses",
         page: 435,
     }, {
         text: "Apply DeMorgan’s Theorems to simplify boolean tests with negatives. DeMorgan’s Theorems let you exploit the logical relationship between an expression and a version of the expression that means the same thing because it’s doubly negated.",
@@ -373,10 +373,10 @@ const CodeComplete: Book = {
         page: 445,
         reference: "Yourdon 1986a, Myers 1976, Marca 1981, and Ledgard and Tauer 1987a",
     }, {
-        text: "Compare numbers to 0 Although it’s appropriate to compare logical expressions implicitly, you should compare numeric expressions explicitly. For numbers, writen 'while ( balance != 0 )' rather than 'while ( balance )'",
+        text: "Compare numbers to 0. Although it’s appropriate to compare logical expressions implicitly, you should compare numeric expressions explicitly. For numbers, write 'while ( balance != 0 )' rather than 'while ( balance )'",
         page: 441,
     }, {
-        text: "Redesign deeply nested code Some experts argue that case statements virtually always indicate poorly factored code in object-oriented programming and are rarely, if ever, needed. This transformation from case statements that invoke routines to an object factory with polymorphic method calls is one such example.",
+        text: "Redesign deeply nested code. Some experts argue that case statements virtually always indicate poorly factored code in object-oriented programming and are rarely, if ever, needed. This transformation from case statements that invoke routines to an object factory with polymorphic method calls is one such example.",
         page: 453,
         reference: "Meyer 1997",
     }, {
