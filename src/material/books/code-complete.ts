@@ -399,6 +399,91 @@ const CodeComplete: Book = {
     }, {
         text: "Minimizing complexity is a key to writing high-quality code.",
         page: 460,
+    }, {
+        text: "Software has both external and internal quality characteristics. External characteristics are characteristics that a user of the software product is aware of, including the following: Correctness - The degree to which a system is free from faults in its specification, design, and implementation; Efficiency - Minimal use of system resources, including memory and execution time; Reliability - The ability of a system to perform its required functions under stated conditions whenever required—having a long mean time between failures; Integrity - The degree to which a system prevents unauthorized or improper access to its programs and its data. The idea of integrity includes restricting unauthorized user accesses as well as ensuring that data is accessed properly— that is, that tables with parallel data are modified in parallel, that date fields contain only valid dates, and so on; Adaptability - The extent to which a system can be used, without modification, in applications or environments other than those for which it was specifically designed; Accuracy - The degree to which a system, as built, is free from error, especially with respect to quantitative outputs. Accuracy differs from correctness; it is a determination of how well a system does the job it’s built for rather than whether it was built correctly; Robustness - The degree to which a system continues to function in the presence of invalid inputs or stressful environmental conditions.",
+        page: 465,
+    }, {
+        text: "Programmers care about the internal characteristics of the software as well as the external ones. The internal quality characteristics include: Maintainability - The ease with which you can modify a software system to change or add capabilities, improve performance, or correct defects; Flexibility - The extent to which you can modify a system for uses or environments other than those for which it was specifically designed; Portability - The ease with which you can modify a system to operate in an environment different from that for which it was specifically designed; Reusability - The extent to which and the ease with which you can use parts of a system in other systems; Readability - The ease with which you can read and understand the source code of a system, especially at the detailed-statement level; Testability - The degree to which you can unit-test and system-test a system; the degree to which you can verify that the system meets its requirements; Understandability - The ease with which you can comprehend a system at both the system-organizational and detailed-statement levels. Understandability has to do with the coherence of the system at a more general level than readability does.",
+        page: 464,
+    }, {
+        text: "Explicit quality-assurance activity. One common problem in assuring quality is that quality is perceived as a secondary goal. Indeed, in some organizations, quick and dirty programming is the rule rather than the exception. Programmers like Global Gary, who litter their code with defects and “complete” their programs quickly, are rewarded more than programmers like High-Quality Henry, who write excellent programs and make sure that they are usable before releasing them. In such organizations, it shouldn’t be surprising that programmers don’t make quality their first priority. The organization must show programmers that quality is a priority. Making the quality-assurance activity explicit makes the priority clear, and programmers will respond accordingly.",
+        page: 466,
+    }, {
+        text: "Unit tests only find 30%-35% of bugs. Beta testing is the highest at 75%. Unit testing is used for designing code, not finding bugs",
+        page: 470,
+    }, {
+        text: "Support pair programming with coding standards. Pair programming will not be effective if the two people in the pair spend their time arguing about coding style.",
+        page: 483,
+    }, {
+        text: "Don’t let pair programming turn into watching. The person without the keyboard should be an active participant in the programming. That person is analyzing the code, thinking ahead to what will be coded next, evaluating the design, and planning how to test the code.",
+        page: 483,
+    }, {
+        text: "Don’t force pair programming of the easy stuff. One group that used pair programming for the most complicated code found it more expedient to do detailed design at the whiteboard for 15 minutes and then to program solo. Most organizations that have tried pair programming eventually settle into using pairs for part of their work but not all of it.",
+        page: 483,
+        reference: "Manzo 2002, Boehm and Turner 2004",
+    }, {
+        text: "Rotate pairs and work assignments regularly. In pair programming, as with other collaborative development practices, benefit arises from different programmers learning different parts of the system. Rotate pair assignments regularly to encourage cross pollination—some experts recommend changing pairs as often as daily.",
+        page: 483,
+        reference: "Reifer 2002",
+    }, {
+        text: "Developers sometimes wonder whether it’s better to write test cases after the code has been written or beforehand. It is suggested that writing test cases first will minimize the amount of time between when a defect is inserted into the code and when the defect is detected and removed.",
+        page: 503,
+        reference: "Beck 2003",
+    }, {
+        text: "Testing is an important part of any software-quality program, and in many cases it’s the only part. This is unfortunate, because collaborative development practices in their various forms have been shown to find a higher percentage of errors than testing does, and they cost less than half as much per error found as testing does.",
+        page: 500,
+        reference: "Card 1987, Russell 1991, Kaplan 1995",
+    }, {
+        text: "Depending on the project’s size and complexity, developer testing should probably take 8 to 25 percent of the total project time.",
+        page: 502,
+    }, {
+        text: "Writing test cases before writing the code doesn’t take any more effort than writing test cases after the code; it simply resequences the test-case-writing activity.",
+        page: 503,
+    }, {
+        text: "Writing test cases first forces you to think at least a little bit about the requirements and design before writing code, which tends to produce better code.",
+        page: 504,
+    }, {
+        text: "Writing test cases first exposes requirements problems sooner, before the code is written, because it’s hard to write a test case for a poor requirement.",
+        page: 504,
+    }, {
+        text: "Developer testing tends to have an optimistic view of test coverage. Average programmers believe they are achieving 95 percent test coverage, but they’re typically achieving more like 80 percent test coverage in the best case, 30 percent in the worst case, and more like 50-60 percent in the average case.",
+        page: 504,
+        reference: "Boris Beizer in Johnson 1994",
+    }, {
+        text: "The scope of most errors is fairly limited. One study found that 85 percent of errors could be corrected without modifying more than one routine.",
+        page: 519,
+        reference: "Endres 1975",
+    }, {
+        text: "Clerical errors (typos) are a surprisingly common source of problems. One study found that 36% of all construction errors were clerical mistakes.",
+        page: 519,
+        reference: "Weiss 1975",
+    }, {
+        text: "Misunderstanding the design is a recurring theme in studies of programmer errors. Beizer’s compilation study, for what it’s worth, found that 16% of the errors grew out of misinterpretations of the design. Another study found that 19% of the errors resulted from misunderstood design. It’s worthwhile to take the time you need to understand the design thoroughly.",
+        page: 519,
+        reference: "Beizer 1990, Weiss 1975",
+    }, {
+        text: "The General Principle of Software Quality is that improving quality reduces development costs.",
+        page: 474,
+    }, {
+        text: "The best way to improve productivity and quality is to reduce the time spent reworking code, whether the rework arises from changes in requirements, changes in design, or debugging.",
+        page: 474,
+    }, {
+        text: "General Principle of Software Quality is also that improving quality improves the development schedule and thus reduces development costs",
+        page: 518,
+    }, {
+        text: "Hurrying to solve a problem is one of the most time-ineffective things you can do. It leads to rushed judgments, incomplete defect diagnosis, and incomplete corrections. Wishful thinking can lead you to see solutions where there are none.",
+        page: 551,
+    }, {
+        text: "Copy and paste is a design error.",
+        page: 565,
+        reference: "David Parnas, McConnell 1998b",
+    }, {
+        text: "Duplicated code almost always represents a failure to fully factor the design in the first place. Duplicate code sets you up to make parallel modifications—whenever you make changes in one place, you have to make parallel changes in another place. It also violates what Andrew Hunt and Dave Thomas refer to as the “DRY principle”",
+        page: 565,
+        reference: "Andrew Hunt and Dave Thomas - Don’t Repeat Yourself (2000)",
+    }, {
+        text: "If you find a class that takes ownership for a hodgepodge of unrelated responsibilities (poor cohesion), that class should be broken up into multiple classes, each of which has responsibility for a cohesive set of responsibilities.",
+        page: 566,
     }],
 };
 
