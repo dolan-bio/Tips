@@ -484,6 +484,103 @@ const CodeComplete: Book = {
     }, {
         text: "If you find a class that takes ownership for a hodgepodge of unrelated responsibilities (poor cohesion), that class should be broken up into multiple classes, each of which has responsibility for a cohesive set of responsibilities.",
         page: 566,
+    }, {
+        text: "Well-factored programs tend to have many small, well-defined routines that don’t need large parameter lists. A long parameter list is a warning that the abstraction of the routine interface has not been well thought out.",
+        page: 566,
+    }, {
+        text: "Sometimes a class has two or more distinct responsibilities. When that happens you find yourself changing either one part of the class or another part of the class—but few changes affect both parts of the class. That’s a sign that the class should be cleaved into multiple classes along the lines of the separate responsibilities.",
+        page: 566,
+    }, {
+        text: "When you find yourself routinely making changes to the same set of classes, that suggests the code in those classes could be rearranged so that changes affect only one class. In my experience, this is a hard ideal to accomplish, but it’s nonetheless a good goal.",
+        page: 566,
+    }, {
+        text: "Although case statements are not inherently bad, if you find yourself making parallel modifications to similar case statements in multiple parts of the program, you should ask whether inheritance might be a better approach.",
+        page: 566,
+    }, {
+        text: "If you find yourself repeatedly manipulating the same set of data items, you should ask whether those manipulations should be combined into a class of their own.",
+        page: 566,
+    }, {
+        text: "Primitive data types can be used to represent an infinite number of real-world entities. If your program uses a primitive data type like an integer to represent a common entity such as money, consider creating a simple Money class so that the compiler can perform type checking on Money variables, so that you can add safety checks on the values assigned to money, and so on. If both Money and Temperature are integers, the compiler won’t warn you about erroneous assignments like bankBalance = recordLowTemperature.",
+        page: 567,
+    }, {
+        text: "Sometimes the result of refactoring code is that an old class doesn’t have much to do. If a class doesn’t seem to be carrying its weight, ask if you should assign all of that class’s responsibilities to other classes and eliminate the class altogether.",
+        page: 567,
+    }, {
+        text: "Finding yourself passing data to one routine just so that routine can pass it to another routine is called “tramp data”. This might be OK, but ask yourself whether passing the specific data in question is consistent with the abstraction presented by each of the routine interfaces. If the abstraction for each routine is OK, passing the data is OK. If not, find some way to make each routine’s interface more consistent.",
+        page: 567,
+        reference: "Page-Jones 1988",
+    }, {
+        text: "If you find that most of the code in a class is just passing off calls to routines in other classes, consider whether you should eliminate the middleman and call those other classes directly.",
+        page: 567,
+    }, {
+        text: "Encapsulation (information hiding) is probably the strongest tool you have to make your program intellectually manageable and to minimize ripple effects of code changes. Anytime you see one class that knows more about another class than it should—including derived classes knowing too much about their parents—err on the side of stronger encapsulation rather than weaker.",
+        page: 567,
+    }, {
+        text: "A subclass uses only a small percentage of its parents’ routines indicates that that subclass has been created because a parent class happened to contain the routines it needed, not because the subclass is logically a descendent of the superclass. Consider achieving better encapsulation by switching the subclass’s relationship to its superclass from an is-a relationship to a has-a relationship; convert the superclass to member data of the former subclass, and expose only the routines in the former subclass that are really needed.",
+        page: 567,
+    }, {
+        text: "Comments have an important role to play, but they should not be used as a crutch to explain bad code. The age-old wisdom is dead-on: “Don’t document bad code—rewrite it”.",
+        page: 568,
+        reference: "Kernighan and Plauger 1978",
+    }, {
+        text: "A routine uses setup code before a routine call or takedown code after a routine call is a ref flag. This is semantic coupling.",
+        page: 568,
+    }, {
+        text: "A routine uses more features of another class than of its own class suggests that the routine should be moved into the other class and then invoked by its old class.",
+        page: 565,
+    }, {
+        text: "Programmers are notoriously bad at guessing what functionality might be needed someday. “Designing ahead” is subject to numerous predictable problems such as: guessing wrong, not able to anticipate all the intricate features of the future requirement and creates additional complexity, which means more testing and defect correction etc.",
+        page: 569,
+    }, {
+        text: "Experts agree that the best way to prepare for future requirements is not to write speculative code; it’s to make the currently required code as clear and straightforward as possible so that future programmers will know what it does and does not do and will make their changes accordingly.",
+        page: 570,
+        reference: "Fowler 1999, Beck 2000",
+    }, {
+        text: "Reasons to refactor: Code is duplicated, a routine is too long, a loop is too long or too deeply nested, a class has poor cohesion, a class interface does not provide a consistent level of abstraction, a parameter list has too many parameters, changes within a class tend to be compartmentalized, changes require parallel modifications to multiple classes, inheritance hierarchies have to be modified in parallel, case statements have to be modified in parallel, related data items that are used together are not organized into classes, a routine uses more features of another class than of its own class, a primitive data type is overloaded, a class doesn’t do very much, a chain of routines passes tramp data, a middleman object isn’t doing anything, one class is overly intimate with another, a routine has a poor name, data members are public, a subclass uses only a small percentage of its parents’ routines, comments are used to explain difficult code, global variables are used, a routine uses setup code before a routine call or takedown code after a routine call, a program contains code that seems like it might be needed someday.",
+        page: 570,
+    }, {
+        text: "If you’re using a numeric or string literal like 3.14 (Magic Number), replace that literal with a named constant like PI.",
+        page: 571,
+    }, {
+        text: "If a variable is used for more than one purpose—common culprits are i, j, temp, and x—create separate variables for each usage, each of which has a more specific name.",
+        page: 571,
+    }, {
+        text: "If a data primitive needs additional behavior (including stricter type checking) or additional data, convert the data to an object and add the behavior you need. This can apply to simple numeric types like Money and Temperature. It can also apply to enumerated types like Color, Shape, Country, or OutputType.",
+        page: 572,
+    }, {
+        text: "Simplify a boolean expression by introducing well named intermediate variables that help document the meaning of the expression.",
+        page: 572,
+    }, {
+        text: "Move a complex boolean expression into a well-named boolean function. If the expression is complicated enough, this refactoring can improve readability. If the expression is used more than once, it eliminates the need for parallel modifications and reduces the chance of error in using the expression.",
+        page: 572,
+    }, {
+        text: "Return as soon as you know the answer instead of assigning a return value within nested if-then-else statements. Code is often easiest to read and least error-prone if you exit a routine as soon as you know the return value. The alternative of setting a return value and then unwinding your way through a lot of logic can be harder to follow.",
+        page: 573,
+    }, {
+        text: "Convert a long routine to a class If a routine is too long, sometimes turning it into a class and then further factoring the former routine into multiple routines will improve readability.",
+        page: 573,
+    }, {
+        text: "The Pareto Principle, also known as the 80/20 rule, states that you can get 80 percent of the result with 20 percent of the effort. The principle applies to a lot of areas other than programming, but it definitely applies to program optimization.",
+        page: 592,
+    }, {
+        text: "Barry Boehm reports that 20 percent of a program’s routines consume 80 percent of its execution time. In his classic paper “An Empirical Study of Fortran Programs,” Donald Knuth found that less than four percent of a program usually accounts for more than 50 percent of its run time.",
+        page: 592,
+        reference: "Barry Boehm (1987b), Donald Knuth (1971)",
+    }, {
+        text: "Refactor when you add a class. Adding a class often brings issues with existing code to the fore. Use this time as an opportunity to refactor other classes that are closely related to the class you’re adding.",
+        page: 582,
+    }, {
+        text: "Refactor when you fix a defect. Use the understanding you gain from fixing a bug to improve other code that might be prone to similar defects.",
+        page: 582,
+    }, {
+        text: "Refactor when you add a routine. When you add a routine, check whether related routines are well organized. If not, refactor them.",
+        page: 582,
+    }, {
+        text: "In a maintenance environment, improve the parts you touch. Code that is never modified doesn’t need to be refactored. But when you do touch a section of code, be sure you leave it better than you found it.",
+        page: 583,
+    }, {
+        text: "Define an interface between clean code and ugly code, and then move code across the interface. The “real world” is often messier than you’d like. The messiness might come from complicated business rules, hardware interfaces, or software interfaces. A common problem with geriatric systems is poorly written production code that must remain operational at all times.",
+        page: 583,
     }],
 };
 
