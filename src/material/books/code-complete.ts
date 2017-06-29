@@ -581,6 +581,132 @@ const CodeComplete: Book = {
     }, {
         text: "Define an interface between clean code and ugly code, and then move code across the interface. The “real world” is often messier than you’d like. The messiness might come from complicated business rules, hardware interfaces, or software interfaces. A common problem with geriatric systems is poorly written production code that must remain operational at all times.",
         page: 583,
+    }, {
+        text: "Performance is only loosely related to code speed. To the extent that you work on your code’s speed, you’re not working on other quality characteristics. Be wary of sacrificing other characteristics to make your code faster. Your work on speed might hurt overall performance rather than help it.",
+        page: 588,
+    }, {
+        text: "Reducing the lines of code in a high-level language does not improves the speed or size of the resulting machine. There no predictable relationship exists between the number of lines of code in a high-level language and a program’s ultimate size and speed.",
+        page: 593,
+    }, {
+        text: "You should not optimize as you go along. One theory is that if you strive to write the fastest and smallest possible code as you write each routine, your program will be fast and small. This approach creates a forest-for-the-trees situation in which programmers ignore significant global optimizations because they’re too busy with micro-optimizations. Remember the 80/20 rule. You would be spending 96% of your time optimizing on something which may not need to be optimized.",
+        page: 594,
+    }, {
+        text: "Use a high-quality design. Make the program right. Make it modular and easily modifiable so that it’s easy to work on later. When it’s complete and correct, check the performance. If the program lumbers, make it fast and small. Don’t optimize until you know you need to.",
+        page: 596,
+    }, {
+        text: "You should not optimize as you go along. In the rare case in which developers identify the bottlenecks correctly, they overkill the bottlenecks they’ve identified and allow others to become critical. Again, the ultimate effect is a reduction in performance. Optimizations done after a system is complete can identify each problem area and its relative importance so that optimization time is allocated effectively.",
+        page: 594,
+    }, {
+        text: "Focusing on optimization during initial development detracts from achieving other program objectives. Developers immerse themselves in algorithm analysis and arcane debates that in the end don’t contribute much value to the user. Concerns such as correctness, information hiding, and readability become secondary goals, even though performance is easier to improve later than these other concerns are. Post hoc performance work typically affects less than five percent of a program’s code. Would you rather go back and do performance work on five percent of the code or readability work on 100 percent?",
+        page: 595,
+    }, {
+        text: "In short, premature optimization’s primary drawback is its lack of perspective. Its victims include final code speed, performance attributes that are more important than code speed, program quality, and ultimately the software’s users. If the development time saved by implementing the simplest program is devoted to optimizing the running program, the result will always be a program that runs faster than one developed with indiscriminate optimization efforts.",
+        page: 595,
+        reference: "Stevens 1981",
+    }, {
+        text: "One of the most significant sources of inefficiency is unnecessary input/output (I/O). If you have a choice of working with a file in memory vs. on disk, in a database, or across a network, use an in-memory data structure unless space is critical.",
+        page: 598,
+    }, {
+        text: "Sources of inefficiency include I/O, paging, system calls, interpreted languages and errors (leaving debugging code turned on, forgetting to de-allocate memory, improperly designing database tables, polling nonexistent devices until they time out, and so on).",
+        page: 598,
+    }, {
+        text: "The code-tuning changes described in this chapter might seem cosmetically similar to refactorings, but refactorings are changes that improve a program’s internal structure. The changes in this chapter might better be called “anti-refactorings”. Far from “improving the internal structure,” these changes degrade the internal structure in exchange for gains in performance.",
+        page: 609,
+        reference: "Fowler 1999",
+    }, {
+        text: "Case statements are faster than if statements in C#. If statements are faster than case statements in Java",
+        page: 614,
+    }, {
+        text: "Use look-up tables instead of long if-else statement chains for static data. It is a 33%-50% boost in performance. Although the definition of the table is hard to read, if it’s well documented it won’t be any harder to read than the code for the complicated chain of logic was. If the definition changes, the table will be much easier to maintain than the earlier logic would have been.",
+        page: 615,
+    }, {
+        text: "If a program uses lazy evaluation, it avoids doing any work until the work is needed. Lazy evaluation is similar to just-in-time strategies that do the work closest to when it’s needed. Suppose, for example, that your program contains a table of 5000 values, generates the whole table at startup time, and then uses it as the program executes. If the program uses only a small percentage of the entries in the table, it might make more sense to compute them as they’re needed rather than all at once. Once an entry is computed, it can still be stored for future reference (otherwise known as “cached”).",
+        page: 616,
+    }, {
+        text: "Jamming, or “fusion,” is the result of combining two loops that operate on the same set of elements. The gain lies in cutting the loop overhead from two loops to one. When you jam loops, you find code in two loops that you can combine into one. Usually, that means the loop counters have to be the same. Performance gains up to 38%.",
+        page: 618,
+    }, {
+        text: "The goal of loop unrolling is to reduce the amount of loop housekeeping. Unrolling means turning the loop into individual repeated lines of code. Although completely unrolling a loop is a fast solution and works well when you’re dealing with a small number of elements, it’s not practical when you have a large number of elements or when you don’t know in advance how many elements you’ll have. Performance gains of up to 43%.",
+        page: 618,
+    }, {
+        text: "Miminize the work inside loops. One key to writing effective loops is to minimize the work done inside a loop. If you can evaluate a statement or part of a statement outside a loop so that only the result is used inside the loop, do so. It’s good programming practice, and in some cases it improves readability.",
+        page: 619,
+    }, {
+        text: "Use Sentinel Values. When you have a loop with a compound test, you can often save time by simplifying the test. If the loop is a search loop, one way to simplify the test is to use a sentinel value, a value that you put just past the end of the search range and that’s guaranteed to terminate the search.",
+        page: 621,
+    }, {
+        text: "Put the busiest loop on the inside. When you have nested loops, think about which loop you want on the outside and which you want on the inside. The key to improving the loop is that the outer loop executes much more often than the inner loop. Each time the loop executes, it has to initialize the loop index, increment it on each pass through the loop, and check it after each pass. Performance gains of up to 34%.",
+        page: 623,
+    }, {
+        text: "Use Strength Reduction to code tune. Reducing strength means replacing an expensive operation such as multiplication with a cheaper operation such as addition. Sometimes you’ll have an expression inside a loop that depends on multiplying the loop index by a factor. Addition is usually faster than multiplication, and if you can compute the same number by adding the amount on each iteration of the loop rather than by multiplying, the code will typically run faster.",
+        page: 623,
+    }, {
+        text: "Integer addition and multiplication tend to be faster than floating point. Changing a loop index from a floating point to an integer, for example, can save time.",
+        page: 625,
+    }, {
+        text: "Conventional wisdom maintains that multiple dimensions on arrays are expensive. If you can structure your data so that it’s in a one-dimensional array rather than a twodimensional or three-dimensional array, you might be able to save some time. ",
+        page: 625,
+    }, {
+        text: "In addition to minimizing accesses to doubly or triply dimensioned arrays, it’s often advantageous to minimize array accesses, period. A loop that repeatedly uses one element of an array is a good candidate for the application of this technique.",
+        page: 626,
+    }, {
+        text: "Use Supplementary Indexes to code-tune. Using a supplementary index means adding related data that makes accessing a data type more efficient. You can add the related data to the main data type, or you can store it in a parallel structure.",
+        page: 627,
+    }, {
+        text: "Use Caching to save a few values in such a way that you can retrieve the most commonly used values more easily than the less commonly used values. If a program randomly reads records from a disk, for example, a routine might use a cache to save the records read most frequently. When the routine receives a request for a record, it checks the cache to see whether it has the record. If it does, the record is returned directly from memory rather than from disk. Use this as a means of code tuning.",
+        page: 628,
+    }, {
+        text: "You can use algebraic identities to replace costly operations with cheaper ones. For example, the following expressions are logically equivalent: 'not a and not b' and 'not (a or b)'. If you choose the second expression instead of the first, you can save a not operation. Use this as a means of code tuning.",
+        page: 630,
+    }, {
+        text: "If you’re using a named constant or a magic number in a routine call and it’s the only argument, that’s a clue that you could precompute the number, put it into a constant, and avoid the routine call. The same principle applies to multiplications, divisions, additions, and other operations. Use this as a means of code tuning.",
+        page: 632,
+    }, {
+        text: "System routines are expensive and provide accuracy that’s often wasted. Unity does something similar with their own Math routines.",
+        page: 633,
+    }, {
+        text: "A common low-level design decision is the choice of whether to compute results on the fly or compute them once, save them, and look them up as needed. If the results are used many times, it’s often cheaper to compute them once and look them up the rest of the time. In a space-wars video game, for example, the programmers initially computed gravity coefficients for different distances from the sun. The computation for the gravity coefficients was expensive and affected performance. The program recognized relatively few distinct distances from the sun, however, so the programmers were able to precompute the gravity coefficients and store them in a 10-element array. The array lookup was much faster than the expensive computation. Use this as a means of code tuning.",
+        page: 635,
+    }, {
+        text: "Eliminate Common Subexpressions. If you find an expression that’s repeated several times, assign it to a variable and refer to the variable rather than recomputing the expression in several places. The loan-calculation example has a common subexpression that you could eliminate. Use this as a means of code tuning.",
+        page: 638,
+    }, {
+        text: "One long-standing piece of conventional wisdom that shouldn’t be left unmentioned is the advice that when you run into a performance bottleneck, you should recode in a low-level language. If you’re coding in C++, the low-level language might be assembler. If you’re coding in Python, the low-level language might be C. Recoding in a lowlevel language tends to improve both speed and code size.",
+        page: 640,
+    }, {
+        text: "Code tuning invariably involves tradeoffs among complexity, readability, simplicity, and maintainability on the one hand and a desire to improve performance on the other. It introduces a high degree of maintenance overhead because of all the reprofiling that’s required.",
+        page: 644,
+    }, {
+        text: "Computers have become so powerful that for many common kinds of programs, the level of performance optimization discussed in this chapter has become irrelevant. In other ways, performance issues have hardly changed at all. People writing desktop applications and websites may not need this information, but people writing software for embedded systems, real-time systems, and other systems with strict speed or space restrictions can still benefit from it.",
+        page: 643,
+    }, {
+        text: "If an optimization isn’t important enough to haul out the profiling machinery, it isn’t important enough to degrade readability, maintainability, and other code characteristics. The impact of unmeasured code tuning on performance is speculative at best, whereas the impact on readability is as certain as it is detrimental.",
+        page: 644,
+    }, {
+        text: "As the kinds of defects change with size, so do the numbers of defects. You would naturally expect a project that’s twice as large as another to have twice as many errors. But the density of defects—the number of defects per 1000 lines of code—increases. The product that’s twice as large is likely to have more than twice as many errors.",
+        page: 652,
+    }, {
+        text: "Productivity has a lot in common with software quality when it comes to project size. At small sizes (2000 lines of code or smaller), the single biggest influence on productivity is the skill of the individual programmer. As project size increases, team size and organization become greater influences on productivity.",
+        page: 653,
+        reference: "Jones 1998",
+    }, {
+        text: "If you are working on a one-person project, the biggest influence on the project’s success or failure is you. If you’re working on a 25-person project, it’s conceivable that you’re still the biggest influence, but it’s more likely that no one person will wear the medal for that distinction; your organization will be a stronger influence on the project’s success or failure.",
+        page: 654,
+    }, {
+        text: "On a small project, construction is the most prominent activity by far, taking up as much as 65 percent of the total development time. On a medium-size project, construction is still the dominant activity but its share of the total effort falls to about 50 percent. On very large projects, architecture, integration, and system testing take up more time and construction becomes less dominant. In short, as project size increases, construction becomes a smaller part of the total effort.",
+        page: 654,
+    }, {
+        text: "The more communication paths you have between people, the more time you spend communicating and the more opportunities are created for communication mistakes. Larger-size projects demand organizational techniques that streamline communication or limit it in a sensible way.",
+        page: 650,
+    }, {
+        text: "If someone on a project is going to define standards, have a respected architect define the standards rather than the manager. Software projects operate as much on an “expertise hierarchy” as on an “authority hierarchy.”",
+        page: 662,
+    }, {
+        text: "Techniques for Encouraging Good Coding: Assign two people to every part of the project; Review every line of code; Require code sign-offs; Route good code examples for review; Emphasize that code listings are public assets; Reward good code; Have one easy standard to determine whats good.",
+        page: 663,
+    }, {
+        text: "Emphasize that code listings are public assets. Programmers sometimes feel that the code they’ve written is “their code,” as if it were private property. Although it is the result of their work, code is part of the project and should be freely available to anyone else on the project who needs it. It should be seen by others during reviews and maintenance, even if at no other time.",
+        page: 663,
     }],
 };
 
