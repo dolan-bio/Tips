@@ -707,6 +707,83 @@ const CodeComplete: Book = {
     }, {
         text: "Emphasize that code listings are public assets. Programmers sometimes feel that the code they’ve written is “their code,” as if it were private property. Although it is the result of their work, code is part of the project and should be freely available to anyone else on the project who needs it. It should be seen by others during reviews and maintenance, even if at no other time.",
         page: 663,
+    }, {
+        text: "If you’re managing a programming project and you have a programming background, an easy and effective technique for eliciting good work is to say “I must be able to read and understand any code written for the project.” That the manager isn’t the hottest technical hotshot can be an advantage in that it might discourage “clever” or tricky code.",
+        page: 664,
+    }, {
+        text: "A software project is dynamic. Code changes, requirements change, design changes, which in turn changes code.",
+        page: 666,
+    }, {
+        text: "During development, you’re bound to be bristling with ideas about how to improve the system. If you implement each change as it occurs to you, you’ll soon find yourself walking on a software treadmill—for all that the system will be changing, it won’t be moving closer to completion.",
+        page: 666,
+    }, {
+        text: "If you don’t control changes to requirements, you can end up writing code for parts of the system that are eventually eliminated. You can write code that’s incompatible with new parts of the system. You might not detect many of the incompatibilities until. integration time, which will become finger-pointing time because nobody will really know what’s going on.",
+        page: 664,
+    }, {
+        text: "Handle change requests in groups It’s tempting to implement easy changes as ideas arise. The problem with handling changes in this way is that good changes can get lost. If you think of a simple change 25 percent of the way through the project and you’re on schedule, you’ll make the change. If you think of another simple change 50 percent of the way through the project and you’re already behind, you won’t. When you start to run out of time at the end of the project, it won’t matter that the second change is 10 times as good as the first—you won’t be in a position to make any nonessential changes. Some of the best changes can slip through the cracks merely because you thought of them later rather than sooner. A solution to this problem is to write down all ideas and suggestions, no matter how easy they would be to implement, and save them until you have time to work on them. Then, viewing them as a group, choose the ones that will be the most beneficial.",
+        page: 666,
+    }, {
+        text: "Estimate the cost of each change Whenever your customer, your boss, or you are tempted to change the system, estimate the time it would take to make the change, including review of the code for the change and retesting the whole system. Include in your estimate time for dealing with the change’s ripple effect through requirements to design to code to test to changes in the user documentation. Let all the interested parties know that software is intricately interwoven and that time estimation is necessary even if the change appears small at first glance. Regardless of how optimistic you feel when the change is first suggested, refrain from giving an off-the-cuff estimate. Such estimates are often mistaken by a factor of 2 or more.",
+        page: 666,
+    }, {
+        text: "Be wary of high change volumes While some degree of change is inevitable, a high volume of change requests is a key warning sign that requirements, architecture, or top-level designs weren’t done well enough to support effective construction. Backing up to work on requirements or architecture might seem expensive, but it won’t be nearly as expensive as constructing the software more than once or throwing away code for features that you really didn’t need.",
+        page: 666,
+    }, {
+        text: "Establish a change-control board or its equivalent in a way that makes sense for your project The job of a change-control board is to separate the wheat from the chaff in change requests. Anyone who wants to propose a change submits the change request to the change-control board. The term “change request” refers to any request that would change the software: an idea for a new feature, a change to an existing feature, an “error report” that might or might not be reporting a real error, and so on. The board meets periodically to review proposed changes. It approves, disapproves, or defers each change. Change-control boards are considered a best practice for prioritizing and controlling requirements changes; however, they are still fairly uncommon in commercial settings.",
+        page: 667,
+        reference: "Jones 1998, Jones 2000",
+    }, {
+        text: "According to Fred Brooks’s law, adding people to a late software project makes it later. It’s like adding gas to a fire. Brooks’s explanation is convincing: new people need time to familiarize themselves with a project before they can become productive. Their training takes up the time of the people who have already been trained. And merely increasing the number of people increases the complexity and amount of project communication. Brooks points out that the fact that one woman can have a baby in nine months does not imply that nine women can have a baby in one month.",
+        page: 676,
+        reference: "Brooks 1995",
+    }, {
+        text: "The simple statement that adding programmers to a late project makes it later, however, masks the fact that under some circumstances it’s possible to add people to a late project and speed it up. As Brooks points out in the analysis of his law, adding people to software projects in which the tasks can’t be divided and performed independently doesn’t help. But if a project’s tasks are partitionable, you can divide them further and assign them to different people, even to people who are added late in the project. Other researchers have formally identified circumstances under which you can add people to a late project without making it later.",
+        page: 676,
+        reference: "Abdel-Hamid 1989, McConnell 1999",
+    }, {
+        text: "On average, programmers only spend 13% of time writing code. 14% of the time is spent reading code, the rest is on meetings, business, person, training, and even walking around.",
+        page: 681,
+    }, {
+        text: "Managers of programming projects aren’t always aware that certain programming issues are matters of religion. If you’re a manager and you try to require compliance with certain programming practices, you’re inviting your programmers’ ire. Here’s a list of religious issues: Programming language, Indentation style, Placing of braces, Choice of IDE, Commenting style, Efficiency vs. readability tradeoffs, Choice of methodology—for example, Scrum vs. Extreme Programming vs. evolutionary delivery, Programming utilities, Naming conventions, Use of gotos, Use of global variables, Measurements, especially productivity measures such as lines of code per day",
+        page: 681,
+    }, {
+        text: "Physical environment makes a big difference in productivity. DeMarco and Lister asked 166 programmers from 35 organizations about the quality of their physical environments. Most employees rated their workplaces as not acceptable. In a subsequent programming competition, the programmers who performed in the top 25 percent had bigger, quieter, more private offices and fewer interruptions from people and phone calls.",
+        page: 684,
+    }, {
+        text: "In software development, nontechnical managers are common, as are managers who have technical experience but who are 10 years behind the times. Technically competent, technically current managers are rare. If you work for one, do whatever you can to keep your job. It’s an unusual treat.",
+        page: 686,
+    }, {
+        text: "If your manager is more typical, you’re faced with the unenviable task of managing your manager. “Managing your manager” means that you need to tell your manager what to do rather than the other way around. The trick is to do it in a way that allows your manager to continue believing that you are the one being managed. Here are some approaches to dealing with your manager: Plant ideas for what you want to do, and then wait for your manager to have a brainstorm (your idea) about doing what you want to do; Educate your manager about the right way to do things. This is an ongoing job because managers are often promoted, transferred, or fired; Focus on your manager’s interests, doing what he or she really wants you to do, and don’t distract your manager with unnecessary implementation details. (Think of it as “encapsulation” of your job.); Refuse to do what your manager tells you, and insist on doing your job the right way; Find another job.",
+        page: 686,
+    }, {
+        text: "Create a penalty for breaking the build Most groups that use daily builds create a penalty for breaking the build. Make it clear from the beginning that keeping the build healthy is one of the project’s top priorities. A broken build should be the exception, not the rule. Insist that developers who have broken the build stop all other work until they’ve fixed it. If the build is broken too often, it’s hard to take seriously the job of not breaking the build.",
+        page: 705,
+    }, {
+        text: "A common and somewhat outdated rule is to limit statement line length to 80 characters. It is because lines longer than 80 characters are hard to read, the 80-character limitation discourages deep nesting and lines longer than 80 characters often won’t fit on 8.5” x 11” paper, especially when code is printed “2 up” (2 pages of code to each physical printout page). With larger screens, narrow typefaces, and landscape mode, the 80-character limit appears increasingly arbitrary. A single 90-character-long line is usually more readable than one that has been broken in two just to avoid spilling over the 80th column. With modern technology, it’s probably all right to exceed 80 columns occasionally.",
+        page: 753,
+    }, {
+        text: "Make the incompleteness of a statement obvi . Sometimes a statement must be broken across lines, either because it’s longer than programming standards allow or because it’s too absurdly long to put on one line. Make it obvious that the part of the statement on the first line is only part of a statement. The easiest way to do that is to break up the statement so that the part on the first line is blatantly incorrect syntactically if it stands alone.",
+        page: 754,
+    }, {
+        text: "Do not align right sides of assignment statements. while adding indentations for alignment might look attractive, it becomes a headache to maintain the alignment of the equals signs as variable names change and code is run through tools that substitute tabs for spaces and spaces for tabs. It is also hard to maintain as lines are moved among different parts of the program that have different levels of indentation. For consistency with the other indentation guidelines as well as maintainability, treat groups of statements containing assignment operations just as you would treat other statements",
+        page: 758,
+    }, {
+        text: "Use blank lines to separate parts of a routine Use blank lines between the routine header, its data and named-constant declarations (if any), and its body.",
+        page: 766,
+    }, {
+        text: "In laying out class interfaces, the convention is to present the class members in the following order: 1. Header comment that describes the class and provides any notes about the overall usage of the class; 2. Constructors and destructors; 3. Public routines; 4. Protected routines; 5. Private routines and member data.",
+        page: 768,
+    }, {
+        text: "Class implementations are generally laid out in this order: 1. Header comment that describes the contents of the file the class is in; 2. Class data; 3. Public routines; 4. Protected routines; 5. Private routines.",
+        page: 768,
+    }, {
+        text: "Structuring code is important for its own sake. The specific convention you follow is less important than the fact that you follow some convention consistently. A layout convention that’s followed inconsistently can actually hurt readability",
+        page: 775,
+    }, {
+        text: "Self-documenting code carries the burden of documentation, comments should be the icing on top.",
+        page: 799,
+    }, {
+        
     }],
 };
 
