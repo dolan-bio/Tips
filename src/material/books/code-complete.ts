@@ -918,7 +918,9 @@ const CodeComplete: Book = {
         text: "“Hustle” or “making an effort” doesn’t have the rosy glow it does in high-school physical education class. Hustle is extra, unnecessary effort. It shows that you’re eager but not that you’re getting your work done. It’s easy to confuse motion with progress, busy-ness with being productive. The most important work in effective programming is thinking, and people tend not to look busy when they’re thinking. If I worked with a programmer who looked busy all the time, I’d assume that he was not a good programmer because he wasn’t using his most valuable tool, his brain",
         page: 830,
     }, {
-        
+        text: "Most of the time, persistence in software development is pigheadedness—it has little value. Persistence when you’re stuck on a piece of new code is hardly ever a virtue. Try redesigning the class, try an alternative coding approach, or try coming back to it later. When one approach isn’t working, that’s a good time to try an alternative.",
+        page: 831,
+        reference: "Pirsig 1974",
     }],
 };
 
