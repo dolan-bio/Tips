@@ -768,7 +768,7 @@ const CodeComplete: Book = {
         text: "Do not align right sides of assignment statements. while adding indentations for alignment might look attractive, it becomes a headache to maintain the alignment of the equals signs as variable names change and code is run through tools that substitute tabs for spaces and spaces for tabs. It is also hard to maintain as lines are moved among different parts of the program that have different levels of indentation. For consistency with the other indentation guidelines as well as maintainability, treat groups of statements containing assignment operations just as you would treat other statements",
         page: 758,
     }, {
-        text: "Use blank lines to separate parts of a routine Use blank lines between the routine header, its data and named-constant declarations (if any), and its body.",
+        text: "Use blank lines to separate parts of a routine. Use blank lines between the routine header, its data and named-constant declarations (if any), and its body.",
         page: 766,
     }, {
         text: "In laying out class interfaces, the convention is to present the class members in the following order: 1. Header comment that describes the class and provides any notes about the overall usage of the class; 2. Constructors and destructors; 3. Public routines; 4. Protected routines; 5. Private routines and member data.",
@@ -781,7 +781,142 @@ const CodeComplete: Book = {
         page: 775,
     }, {
         text: "Self-documenting code carries the burden of documentation, comments should be the icing on top.",
+        page: 779,
+    }, {
+        text: "Name the class well, and name it such that it describes its central purpose",
+        page: 780,
+    }, {
+        text: "The class interface must have a consistent abstraction",
+        page: 780,
+    }, {
+        text: "The class interface should make it obvious on how to use the class",
+        page: 780,
+    }, {
+        text: "Each routine should be named exactly what it does and does a well defined task",
+        page: 780,
+    }, {
+        text: "Routine interfaces must be clear",
+        page: 780,
+    }, {
+        text: "Named constants shouyld be used instead of magic numbers",
+        page: 780,
+    }, {
+        text: "Data types should be simple to minimize complexity",
+        page: 780,
+    }, {
+        text: "Related statements should be grouped together",
+        page: 780,
+    }, {
+        text: "Minimize nesting",
+        page: 780,
+    }, {
+        text: "A loop should do one and only one function",
+        page: 780,
+    }, {
+        text: "Simplify boolean expressions by using additional boolean variables, boolean functions, and decision tables",
+        page: 780,
+    }, {
+        text: "Write straight forward code rather than clever code",
+        page: 780,
+    }, {
+        text: "Hide implementation details as much as possible",
+        page: 780,
+    }, {
+        text: "Capers Jones points out that studies at IBM found that a commenting density of one comment roughly every 10 statements was the density at which clarity seemed to peak. Fewer comments made the code hard to understand. More comments also reduced code understandability.",
+        page: 792,
+        reference: "Jones 2000",
+    }, {
+        text: "Avoid self-indulgent comments. Many years ago, I heard the story of a maintenance programmer who was called out of bed to fix a malfunctioning program. The program’s author had left the company and couldn’t be reached. The maintenance programmer hadn’t worked on the program before, and after examining the documentation carefully, he found only one comment: MOV AX, 723h ; R. I. P. L. V. B",
+        page: 792,
+    }, {
+        text: "Focus paragraph comments on the why rather than the how. Comments that explain how something is done usually operate at the programming-language level rather than the problem level. It’s nearly impossible for a comment that focuses on how an operation is done to explain the intent of the operation, and comments that tell how are often redundant. What does the following comment tell you that the code doesn’t?",
+        page: 797,
+    }, {
+        text: "Comments should be unambiguous, readable without the work of figuring out abbreviations. Avoid all but the most common abbreviations in comments. Unless you’re using endline comments, using abbreviations isn’t usually a temptation. If you are and it is, realize that abbreviations are another strike against a technique that struck out several pitches ago",
         page: 799,
+    }, {
+        text: "Don’t comment tricky code; rewrite it. Here’s a comment from a project I worked on. Commenting tricky code is exactly the wrong approach to take. Comments can’t rescue difficult code. As Kernighan and Plauger emphasize, “Don’t document bad code— rewrite it”.",
+        page: 801,
+        reference: "Kernighan and Plauge (1978)",
+    }, {
+        text: "Justify violations of good programming style. If you’ve had to violate good programming style, explain why. That will prevent a well-intentioned programmer from changing the code to a better style, possibly breaking your code. The explanation will make it clear that you knew what you were doing and weren’t just sloppy—give yourself credit where credit is due!",
+        page: 801,
+    }, {
+        text: "Document the source of algorithms that are used. If you’ve used an algorithm from a book or magazine, document the volume and page number you took it from. If you developed the algorithm yourself, indicate where the reader can find the notes you’ve made about it",
+        page: 809,
+    }, {
+        text: "Explanatory comments are typically used to explain complicated, tricky, or sensitive pieces of code. In such situations they are useful, but usually that’s only because the code is confusing. If the code is so complicated that it needs to be explained, it’s nearly always better to improve the code than it is to add comments. Make the code itself clearer, and then use summary or intent comments.",
+        page: 786,
+    }, {
+        text: "Good comments don't repeat the code. It instead should clarify its intent. Comments should explain, at a higher level of abstraction than the code of what you're trying to do.",
+        page: 786,
+    }, {
+        text: "The common argument against commenting as you go along is “When you’re concentrating on the code, you shouldn’t break your concentration to write comments.” Thev appropriate response is that, if you have to concentrate so hard on writing code that commenting interrupts your thinking, you need to design in pseudocode first and then convert the pseudocode to comments. Code that requires that much concentration is a warning sign.",
+        page: 791,
+    }, {
+        text: "If your design is hard to code, simplify the design before you worry about comments or code. If you use pseudocode to clarify your thoughts, coding is straightforward and the comments are automatic.",
+        page: 791,
+    }, {
+        text: "Integrate commenting into your development style. The alternative to integrating commenting into your development style is leaving commenting until the end of the project, and that has too many disadvantages. It becomes a task in its own right, which makes it seem like more work than when it’s done a little bit at a time. Commenting done later takes more time because you have to remember or figure out what the code is doing instead of just writing down what you’re already thinking about. It’s also less accurate because you tend to forget assumptions or subtleties in the design.",
+        page: 791,
+    }, {
+        text: "In good code, the need to comment individual lines of code is rare. Here are two possible reasons a line of code would need a comment: The single line is complicated enough to need an explanation; The single line once had an error, and you want a record of the error.",
+        page: 792,
+    }, {
+        text: "Endline comments have conceptual problems and tend to be used for code that’s too complicated. They are also difficult to format and maintain. Overall, they’re best avoided.",
+        page: 795,
+    }, {
+        text: "Focus your documentation efforts on the code itself. For the record, the code itself is always the first documentation you should check. Code is the first point of documentation.",
+        page: 796,
+    }, {
+        text: "Use comments to prepare the reader for what is to follow. Good comments tell the person reading the code what to expect. A reader should be able to scan only the comments and get a good idea of what the code does and where to look for a specific activity. A corollary to this rule is that a comment should always precede the code it describes. This idea isn’t always taught in programming classes, but it’s a well-established convention in commercial practice.",
+        page: 798,
+    }, {
+        text: "Make every comment count. There’s no virtue in excessive commenting—too many comments obscure the code they’re meant to clarify. Rather than writing more comments, put the extra effort into making the code itself more readable.",
+        page: 798,
+    }, {
+        text: "Document surprises. If you find anything that isn’t obvious from the code itself, put it into a comment. If you have used a tricky technique instead of a straightforward one to improve performance, use comments to point out what the straightforward technique would be and quantify the performance gain achieved by using the tricky technique.",
+        page: 798,
+    }, {
+        text: "Avoid abbreviations. Comments should be unambiguous, readable without the work of figuring out abbreviations. Avoid all but the most common abbreviations in comments. Unless you’re using endline comments, using abbreviations isn’t usually a temptation. If you are and it is, realize that abbreviations are another strike against a technique that struck out several pitches ago.",
+        page: 799,
+    }, {
+        text: "Comment the units of numeric data. If a number represents length, indicate whether the length is expressed in inches, feet, meters, or kilometers. If it’s time, indicate whether it’s expressed in elapsed seconds since 1-1-1980, milliseconds since the start of the program, and so on. If it’s coordinates, indicate whether they represent latitude, longitude, and altitude and whether they’re in radians or degrees; whether they represent an X, Y, Z coordinate system with its origin at the earth’s center; and so on. Don’t assume that the units are obvious. To a new programmer, they won’t be. To someone who’s been working on another part of the system, they won’t be. After the program has been substantially modified, they won’t be.",
+        page: 802,
+    }, {
+        text: "Keep comments close to the code they describe. One reason that the prolog to a routine shouldn’t contain voluminous documentation is that such a practice puts the comments far away from the parts of the routine they describe. During maintenance, comments that are far from the code tend not to be maintained with the code. The comments and the code start to disagree, and suddenly the comments are worthless. Instead, follow the Principle of Proximity and put comments as close as possible to the code they describe. They’re more likely to be maintained, and they’ll continue to be worthwhile.",
+        page: 806,
+    }, {
+        text: "Your employer can’t force you to be a good programmer; a lot of times your employer isn’t even in a position to judge whether you’re good. If you want to be great, you’re responsible for making yourself great. It’s a matter of your personal character.",
+        page: 820,
+    }, {
+        text: "The people who are best at programming are the people who realize how small their brains are. They are humble.",
+        page: 821,
+        reference: "The Humble Programmer, Edsger Dijkstra (1972)",
+    }, {
+        text: "The people who are the worst at programming are the people who refuse to accept the fact that their brains aren’t equal to the task. Their egos keep them from being great programmers. The more you learn to compensate for your small brain, the better a programmer you’ll be. The more humble you are, the faster you’ll improve.",
+        page: 821,
+    }, {
+        text: "Once you admit that your brain is too small to understand most programs and you realize that effective programming is a search for ways to offset that fact, you begin a career-long search for ways to compensate.",
+        page: 822,
+    }, {
+        text: "In the development of a superior programmer, curiosity about technical subjects must be a priority. The relevant technical information changes continually. Specific features of the technical environment change every 5 to 10 years. If you aren’t curious enough to keep up with the changes, you might find yourself down at the old-programmers’ home playing cards with T-Bone Rex and the Brontosaurus sisters.",
+        page: 822,
+    }, {
+        text: "If your workload consists entirely of short-term assignments that don’t develop your skills, be dissatisfied. If you’re working in a competitive software market, half of what you now need to know to do your job will be out of date in three years. If you’re not learning, you’re turning into a dinosaur.",
+        page: 822,
+    }, {
+        text: "Part of maturing as a programming professional is developing an uncompromising sense of intellectual honesty. Intellectual honesty commonly manifests itself in several ways: Refusing to pretend you’re an expert when you’re not; Readily admitting your mistakes; Trying to understand a compiler warning rather than suppressing the message; Clearly understanding your program—not compiling it to see if it works; Providing realistic status reports; Providing realistic schedule estimates and holding your ground when management asks you to adjust them",
+        page: 826,
+    }, {
+        text: "Truly excellent programmers learn how to work and play well with others. Writing readable code is part of being a team player. The computer probably reads your program as often as other people do, but it’s a lot better at reading poor code than people are. As a readability guideline, keep the person who has to modify your code in mind. Programming is communicating with another programmer first and communicating with the computer second.",
+        page: 828,
+    }, {
+        text: "If management applies pressure to change your estimate, realize that ultimately the decision whether to do a project rests with management: “Look. This is how much it’s going to cost. I can’t say whether it’s worth this price to the company—that’s your job. But I can tell you how long it takes to develop a piece of software—that’s my job. I can’t ‘negotiate’ how long it will take; that’s like negotiating how many feet are in a mile. You can’t negotiate laws of nature. We can, however, negotiate other aspects of the project that affect the schedule and then reestimate the schedule. We can eliminate features, reduce performance, develop the project in increments, or use fewer people and a longer schedule or more people and a shorter schedule.”",
+        page: 828,
+    }, {
+        text: "“Hustle” or “making an effort” doesn’t have the rosy glow it does in high-school physical education class. Hustle is extra, unnecessary effort. It shows that you’re eager but not that you’re getting your work done. It’s easy to confuse motion with progress, busy-ness with being productive. The most important work in effective programming is thinking, and people tend not to look busy when they’re thinking. If I worked with a programmer who looked busy all the time, I’d assume that he was not a good programmer because he wasn’t using his most valuable tool, his brain",
+        page: 830,
     }, {
         
     }],
