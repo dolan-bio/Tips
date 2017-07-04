@@ -1,3 +1,1 @@
-import { CodeComplete } from "./code-complete";
-
-export { CodeComplete };
+export { CodeComplete } from "./code-complete";
