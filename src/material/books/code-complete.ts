@@ -921,6 +921,76 @@ const CodeComplete: Book = {
         text: "Most of the time, persistence in software development is pigheadedness—it has little value. Persistence when you’re stuck on a piece of new code is hardly ever a virtue. Try redesigning the class, try an alternative coding approach, or try coming back to it later. When one approach isn’t working, that’s a good time to try an alternative.",
         page: 831,
         reference: "Pirsig 1974",
+    }, {
+        text: "The fact that information changes quickly in programming makes for weird dynamics in the area of “experience.” In many fields, a professional who has a history of achievement can coast, relaxing and enjoying the respect earned by a string of successes. In software development, anyone who coasts quickly becomes out of touch. To stay valuable, you have to stay current. For young, hungry programmers, this is an advantage. Older programmers sometimes feel they’ve already earned their stripes and resent having to prove themselves year after year.",
+        page: 832,
+    }, {
+        text: "If you work for 10 years, do you get 10 years of experience or do you get 1 year of experience 10 times? You have to reflect on your activities to get true experience. If you make learning a continuous commitment, you’ll get experience. If you don’t, you won’t, no matter how many years you have under your belt.",
+        page: 832,
+    }, {
+        text: "The characteristics that matter most are humility, curiosity, intellectual honesty, creativity and discipline, and enlightened laziness.",
+        page: 835,
+    }, {
+        text: "The characteristics of a superior programmer have almost nothing to do with talent and everything to do with a commitment to personal development.",
+        page: 835,
+    }, {
+        text: "Surprisingly, raw intelligence, experience, persistence, and guts hurt as much as they help.",
+        page: 835,
+    }, {
+        text: "Dividing a system into subsystems at the architecture level so that your brain can focus on a smaller amount of the system at one time.",
+        page: 838,
+    }, {
+        text: "Carefully defining class interfaces so that you can ignore the internal workings of the class.",
+        page: 838,
+    }, {
+        text: "Avoiding deep inheritance hierarchies because they are intellectually demanding.",
+        page: 838,
+    }, {
+        text: "Carefully defining your approach to error handling rather than using an arbitrary proliferation of different error-handling techniques.",
+        page: 838,
+    }, {
+        text: "Do not Allow classes to grow into monster classes that amount to whole programs in themselves.",
+        page: 838,
+    }, {
+        text: "Keeping routines short.",
+        page: 838,
+    }, {
+        text: "Minimize the number of parameters passed to a routine, or, more important, passing only the parameters needed to preserve the routine interface’s abstraction",
+        page: 838,
+    }, {
+        text: "The main reason the process matters is that in software, quality must be built in from the first step onward. This flies in the face of the folk wisdom that you can code like hell and then test all the mistakes out of the software. That idea is dead wrong. Testing merely tells you the specific ways in which your software is defective. Testing won’t make your program more usable, faster, smaller, more readable, or more extensible.",
+        page: 840,
+    }, {
+        text: "Readability has a positive effect on all these aspects of a program: Comprehensibility, Reviewability, Error rate, Debugging, Modifiability, Development time—a consequence of all of the above, External quality—a consequence of all of the above",
+        page: 841,
+    }, {
+        text: "The idea of writing unreadable code because you’re the only person working on a project sets a dangerous precedent. Your mother used to say, “What if your face froze in that expression?” And your dad used to say, “You play how you practice.” Habits affect all your work; you can’t turn them on and off at will, so be sure that what you’re doing is something you want to become a habit. A professional programmer writes readable code, period.",
+        page: 842,
+    }, {
+        text: "One study found that 10 generations of maintenance programmers work on an average program before it gets rewritten. Maintenance programmers spend 50 to 60 percent of their time trying to understand the code they have to maintain, and they appreciate the time you put into documenting it.",
+        page: 842,
+        reference: "Thomas 1984, Parikh and Zvegintzov 1983",
+    }, {
+        text: "Program into Your Language, Not in It. Don’t limit your programming thinking only to the concepts that are supported automatically by your language. The best programmers think of what they want to do, and then they assess how to accomplish their objectives with the programming tools at their disposal. Your language doesn’t support assertions? Write your own assert() routine. It might not function exactly the same as a built-in assert(), but you can still realize most of assert()’s benefits by writing your own routine. Your language doesn’t support enumerated types or named constants? That’s fine; you can define your own enumerations and named constants with a disciplined use of global variables supported by clear naming conventions.",
+        page: 843,
+    }, {
+        text: "Program in Terms of the Problem Domain. Another specific method of dealing with complexity is to work at the highest possible level of abstraction. One way of working at a high level of abstraction is to work in terms of the programming problem rather than the computer-science solution. Top-level code shouldn’t be filled with details about files and stacks and queues and arrays and characters whose parents couldn’t think of better names for them than i, j, and k. Top-level code should describe the problem that’s being solved. It should be packed with descriptive class names and routine calls that indicate exactly what the program is doing, not cluttered with details about opening a file as “read only.” Toplevel code shouldn’t contain clumps of comments that say “i is a variable that represents the index of the record from the employee file here, and then a little later it’s used to index the client account file there.”",
+        page: 845,
+    }, {
+        text: "When you or someone else says “This is really tricky code,” that’s a warning sign, usually of poor code. “Tricky code” is a code phrase for “bad code.” If you think code is tricky, think about rewriting it so that it’s not.",
+        page: 848,
+    }, {
+        text: "A class’s having more errors than average is a warning sign. A few error-prone classes tend to be the most expensive part of a program. If you have a class that has had more errors than average, it will probably continue to have more errors than average. Think about rewriting it.",
+        page: 848,
+    }, {
+        text: "Just as an abnormal number of defects in a class warns you that the class has low quality, an abnormal number of defects in a program implies that your process is defective. A good process wouldn’t allow error-prone code to be developed. It would include the checks and balances of architecture followed by architecture reviews, design followed by design reviews, and code followed by code reviews. By the time the code was ready for testing, most errors would have been eliminated. Exceptional performance requires working smart in addition to working hard. Lots of debugging on a project is a warning sign that implies people aren’t working smart. Writing a lot of code in a day and then spending two weeks debugging it is not working smart.",
+        page: 848,
+    }, {
+        text: "If you find yourself working on repetitious code or making similar modifications in several areas, you should feel “uneasy and dissatisfied,” doubting that control has been adequately centralized in classes or routines. If you find it hard to create scaffolding for test cases because you can’t use an individual class easily, you should feel the “irritation of doubt” and ask whether the class is coupled too tightly to other classes.",
+        page: 849,
+    }, {
+        text: "If you can’t reuse code in other programs because some classes are too interdependent, that’s another warning sign that the classes are coupled too tightly.",
+        page: 849,
     }],
 };
 
