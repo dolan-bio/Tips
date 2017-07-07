@@ -1,4 +1,7 @@
-const CodeComplete: Book = {
+
+import { IBook } from "./book";
+
+const CodeComplete: IBook = {
     name: "Code Complete",
     author: "Steve McConnell",
     knowledge: [{
