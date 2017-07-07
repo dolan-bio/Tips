@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npm run lint",
     "build": "rimraf dist && tsc --p .",
-    "lint": "tslint --project ."
+    "lint": "tslint --project .",
+    "postinstall": "npm ruin build"
   },
   "repository": {
     "type": "git",
