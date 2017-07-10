@@ -1,5 +1,5 @@
 import { IGrabber } from "../grabber";
-import { IKnowledge } from "../knowledge";
+import { IKnowledgeOutput } from "../knowledge";
 import { IBook } from "./book";
 import { CodeComplete } from "./code-complete";
 
@@ -11,9 +11,15 @@ export class BookGrabber implements IGrabber {
         this.books.push(CodeComplete);
     }
 
-    public grabTip(): IKnowledge {
+    public grabTip(): IKnowledgeOutput {
         const currentBook = this.books[Math.floor(Math.random() * this.books.length)];
+        const knowledge = currentBook.knowledge[Math.floor(Math.random() * currentBook.knowledge.length)];
 
-        return currentBook.knowledge[Math.floor(Math.random() * currentBook.knowledge.length)];
+        return {
+            text: knowledge.text,
+            page: knowledge.page,
+            reference: knowledge.reference,
+            from: currentBook.name,
+        }
     }
 }
