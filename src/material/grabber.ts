@@ -1,8 +1,8 @@
 import { BookGrabber } from "./books/grabber";
-import { IKnowledge } from "./knowledge";
+import { IKnowledge, IKnowledgeOutput } from "./knowledge";
 
 export interface IGrabber {
-    grabTip(): IKnowledge;
+    grabTip(): IKnowledgeOutput;
 }
 
 export class MaterialGrabber implements IGrabber {
@@ -13,7 +13,7 @@ export class MaterialGrabber implements IGrabber {
         this.grabbers.push(new BookGrabber());
     }
 
-    public grabTip(): IKnowledge {
+    public grabTip(): IKnowledgeOutput {
         const currentGrabber = this.grabbers[Math.floor(Math.random() * this.grabbers.length)];
         return currentGrabber.grabTip();
     }

@@ -3,3 +3,7 @@ export interface IKnowledge {
     page?: number;
     reference?: string;
 }
+
+export interface IKnowledgeOutput extends IKnowledge {
+    from: string;
+}
