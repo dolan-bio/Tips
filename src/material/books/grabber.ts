@@ -20,6 +20,6 @@ export class BookGrabber implements IGrabber {
             page: knowledge.page,
             reference: knowledge.reference,
             from: currentBook.name,
-        }
+        };
     }
 }
