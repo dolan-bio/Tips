@@ -1,6 +1,6 @@
 import { IVideo } from "./video";
 
-const CompositionOverInheritance: IVideo = {
+export const CompositionOverInheritance: IVideo = {
     name: "Composition over Inheritance",
     author: "Fun Fun Function",
     url: "https://www.youtube.com/watch?v=wfMtDGfHWpA",

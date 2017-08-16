@@ -1,6 +1,6 @@
 import { IVideo } from "./video";
 
-const TenTipsForCleanCode: IVideo = {
+export const TenTipsForCleanCode: IVideo = {
     name: "10 Tips for Clean Code",
     author: "Coding Tech",
     url: "https://www.youtube.com/watch?v=UjhX2sVf0eg",

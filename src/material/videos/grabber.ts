@@ -1,14 +1,16 @@
 import { IGrabber } from "../grabber";
 import { IKnowledgeOutput } from "../knowledge";
-import { IBook } from "./book";
-import { CodeComplete } from "./code-complete";
+import { CompositionOverInheritance } from "./composition-over-inheritance";
+import { TenTipsForCleanCode } from "./ten-tips-for-clean-code";
+import { IVideo } from "./video";
 
-export class BookGrabber implements IGrabber {
-    private material: IBook[];
+export class VideoGrabber implements IGrabber {
+    private material: IVideo[];
 
     constructor() {
         this.material = [];
-        this.material.push(CodeComplete);
+        this.material.push(TenTipsForCleanCode);
+        this.material.push(CompositionOverInheritance);
     }
 
     public grabTip(): IKnowledgeOutput {
