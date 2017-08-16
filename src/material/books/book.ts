@@ -1,7 +1,5 @@
-import { IKnowledge } from "../knowledge";
+import { IMaterial } from "../material";
 
-export interface IBook {
+export interface IBook extends IMaterial {
     name: string;
-    author: string;
-    knowledge: IKnowledge[];
 }
