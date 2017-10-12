@@ -1,3 +1,4 @@
+import { BlogGrabber } from "./blogs/grabber";
 import { BookGrabber } from "./books/grabber";
 import { IKnowledge, IKnowledgeOutput } from "./knowledge";
 import { StackOverflowGrabber } from "./stack-overflow/grabber";
@@ -15,6 +16,7 @@ export class MaterialGrabber implements IGrabber {
         this.grabbers.push(new BookGrabber());
         this.grabbers.push(new VideoGrabber());
         this.grabbers.push(new StackOverflowGrabber());
+        this.grabbers.push(new BlogGrabber());
     }
 
     public grabTip(): IKnowledgeOutput {
