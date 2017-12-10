@@ -1,5 +1,5 @@
 {
-  "name": "@dolan-bio/tips",
+  "name": "@dolanmiu/tips",
   "version": "1.0.0",
   "description": "Programming tips found from my journey of learning",
   "main": "dist/index.js",
@@ -7,6 +7,7 @@
     "test": "npm run lint",
     "build": "rimraf dist && tsc --p .",
     "lint": "tslint --project .",
+    "prepublishOnly": "npm run build",
     "postinstall": "npm run build"
   },
   "repository": {
