@@ -1,7 +1,7 @@
 {
-  "name": "@dolanmiu/tips",
+  "name": "coding-tips",
   "version": "1.0.0",
-  "description": "Programming tips found from my journey of learning",
+  "description": "Programming tips found from my journey of learning programming",
   "main": "dist/index.js",
   "scripts": {
     "test": "npm run lint",
